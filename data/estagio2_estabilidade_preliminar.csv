@@ -1,0 +1,495 @@
+lote,produto_familia,estagio,condicao,tempo_dias,ph,densidade_g_cm3,delta_e_estabilidade,aspecto_score,aspecto_desc,cor_score,cor_desc,odor_conforme,odor_desc,causa_oos,oos_flag
+LMU-2401-001,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.07,1.001,0.194,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2401-001,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.11,1.005,0.387,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2401-003,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.1,1.047,0.163,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+ALV-2401-003,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.05,1.049,0.326,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2401-004,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.5,1.038,0.119,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DLL-2401-004,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.42,1.039,0.238,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2401-005,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.01,0.994,0.225,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+AMA-2401-005,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,2.86,0.991,0.452,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+AMA-2401-007,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,2.99,0.992,0.217,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+AMA-2401-007,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,2.96,0.992,0.436,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DLR-2401-008,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,10.14,1.012,0.195,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2401-008,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,10.17,1.014,0.391,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2401-009,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.68,1.033,0.118,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DLL-2401-009,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.65,1.031,0.236,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2401-010,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.41,1.018,0.195,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DLR-2401-010,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.38,1.017,0.39,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DES-2402-011,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.01,1.009,0.111,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DES-2402-011,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.85,1.006,0.222,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,False,"caracteristico, porem alterado",odor alterado,True
+DLR-2402-012,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.5,1.021,0.196,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DLR-2402-012,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.44,1.021,0.392,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DLR-2402-014,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.64,1.015,0.196,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2402-014,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.61,1.017,0.392,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2402-015,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,3.7,1.041,0.159,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+ALV-2402-015,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,3.69,1.041,0.318,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DES-2402-016,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.97,1.007,0.109,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DES-2402-016,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.96,1.011,0.219,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+LMU-2402-017,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.34,1.011,0.195,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+LMU-2402-017,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.3,1.009,0.39,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+LMU-2402-018,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.27,1.009,0.193,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+LMU-2402-018,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.2,1.013,0.386,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DLL-2402-019,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.57,1.035,0.119,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLL-2402-019,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.54,1.032,0.238,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DLL-2402-020,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.59,1.039,0.117,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLL-2402-020,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.58,1.039,0.234,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DES-2402-022,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.2,1.001,0.111,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DES-2402-022,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.19,1.004,0.222,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2402-023,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.78,1.024,0.119,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2402-023,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.7,1.027,0.237,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+LMU-2402-024,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.3,1.009,0.192,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2402-024,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.16,1.009,0.383,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DES-2402-025,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.88,1.002,0.11,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DES-2402-025,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.92,1.004,0.22,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+AMA-2402-026,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.16,0.993,0.226,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+AMA-2402-026,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.09,0.992,0.452,4,separacao franca de fases; coalescencia evidente,0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+DLL-2402-027,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.59,1.034,0.118,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DLL-2402-027,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.56,1.031,0.236,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DES-2402-028,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.29,1.007,0.11,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DES-2402-028,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.29,1.006,0.22,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2402-029,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,2.84,0.995,0.222,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+AMA-2402-029,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,2.78,0.995,0.446,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+AMA-2403-030,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.11,0.993,0.218,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2403-030,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.08,0.995,0.437,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DES-2403-031,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.95,0.998,0.11,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+DES-2403-031,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.94,0.996,0.22,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2403-034,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,3.91,1.051,0.167,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+ALV-2403-034,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,3.79,1.048,0.333,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DES-2403-035,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.06,1.003,0.11,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DES-2403-035,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.03,1.002,0.221,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DLR-2403-036,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.46,1.024,0.195,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2403-036,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.5,1.024,0.39,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLR-2403-037,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.2,1.024,0.194,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+DLR-2403-037,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.13,1.026,0.387,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+ALV-2403-038,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,3.98,1.046,0.167,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+ALV-2403-038,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,3.96,1.046,0.334,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DLR-2403-039,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,10.15,1.027,0.196,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DLR-2403-039,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,10.06,1.023,0.392,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+LMU-2403-040,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.26,1.012,0.193,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+LMU-2403-040,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.23,1.012,0.385,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DLL-2403-041,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.33,1.027,0.119,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2403-041,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.3,1.029,0.237,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DLR-2403-042,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.33,1.024,0.199,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DLR-2403-042,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.35,1.022,0.398,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2403-043,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.68,1.036,0.12,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2403-043,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.6,1.035,0.24,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DES-2403-044,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.86,1.005,0.114,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DES-2403-044,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.83,1.009,0.228,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DLR-2404-045,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.71,1.025,0.198,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DLR-2404-045,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.65,1.026,0.396,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DLR-2404-046,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.27,1.023,0.198,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DLR-2404-046,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.29,1.021,0.395,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DLL-2404-047,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.45,1.029,0.12,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2404-047,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.37,1.026,0.241,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+AMA-2404-048,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.25,0.99,0.221,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2404-048,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.27,0.996,0.444,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+DLL-2404-049,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.3,1.03,0.122,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLL-2404-049,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.3,1.03,0.243,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2404-051,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.37,1.026,0.196,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLR-2404-051,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.33,1.029,0.393,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2404-052,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.19,1.051,0.165,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2404-052,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.15,1.048,0.328,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+LMU-2404-053,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.1,1.01,0.192,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+LMU-2404-053,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.02,1.013,0.383,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2404-054,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.5,1.032,0.118,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DLL-2404-054,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.43,1.03,0.235,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DLL-2404-055,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,8.01,1.033,0.12,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DLL-2404-055,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.98,1.034,0.24,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+LMU-2404-056,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,9.73,1.01,0.195,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+LMU-2404-056,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,9.65,1.009,0.389,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+DLL-2404-057,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.84,1.031,0.12,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DLL-2404-057,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.82,1.032,0.239,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2404-058,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,9.48,1.012,0.193,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,pH fora de faixa,True
+LMU-2404-058,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,9.46,1.014,0.386,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,pH fora de faixa,True
+AMA-2404-059,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.16,0.988,0.216,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2404-059,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.09,0.989,0.434,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2404-060,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.02,1.017,0.192,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+LMU-2404-060,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,9.9,1.014,0.383,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DLR-2404-061,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.47,1.025,0.193,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DLR-2404-061,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.46,1.03,0.386,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+LMU-2405-062,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.32,1.016,0.193,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+LMU-2405-062,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.24,1.012,0.386,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+AMA-2405-063,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.19,0.998,0.223,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+AMA-2405-063,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.07,1.0,0.448,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DLR-2405-064,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.44,1.025,0.196,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DLR-2405-064,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.36,1.024,0.391,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DES-2405-065,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.88,1.008,0.11,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DES-2405-065,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.85,1.009,0.22,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DLR-2405-066,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.49,1.028,0.195,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DLR-2405-066,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.52,1.03,0.389,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+ALV-2405-069,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.24,1.047,0.161,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+ALV-2405-069,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.16,1.048,0.322,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2405-070,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.15,1.018,0.195,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+LMU-2405-070,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.14,1.015,0.389,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+LMU-2405-072,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.24,1.017,0.191,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+LMU-2405-072,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.15,1.017,0.381,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+DES-2406-074,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.85,1.009,0.112,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DES-2406-074,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.8,1.005,0.224,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+LMU-2406-078,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.27,1.008,0.193,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2406-078,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.16,1.005,0.386,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DLL-2406-079,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.44,1.035,0.122,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DLL-2406-079,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.39,1.035,0.243,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2406-080,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.13,1.015,0.194,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2406-080,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.05,1.016,0.387,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2406-081,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.74,1.028,0.12,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DLL-2406-081,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.73,1.028,0.239,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2406-082,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.63,1.019,0.193,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLR-2406-082,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.62,1.017,0.386,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2406-084,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.22,1.004,0.217,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+AMA-2406-084,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.23,1.006,0.435,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2406-086,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.21,1.007,0.194,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+LMU-2406-086,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.27,1.008,0.387,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2406-087,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.59,1.018,0.197,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DLR-2406-087,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.58,1.019,0.393,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DLR-2406-088,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.74,1.014,0.195,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+DLR-2406-088,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.68,1.016,0.39,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2406-089,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.17,0.992,0.219,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2406-089,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.13,0.988,0.44,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,False,"caracteristico, porem alterado",odor alterado,True
+DLR-2407-090,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.47,1.024,0.195,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2407-090,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.52,1.023,0.389,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2407-091,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.64,0.991,0.219,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+AMA-2407-091,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.59,0.991,0.44,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLR-2407-092,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.8,1.03,0.195,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2407-092,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.78,1.031,0.389,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+AMA-2407-094,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.43,0.996,0.228,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2407-094,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.39,0.996,0.456,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DLR-2407-096,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.63,1.021,0.196,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLR-2407-096,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.53,1.024,0.393,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+AMA-2407-097,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.27,0.992,0.22,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+AMA-2407-097,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.19,0.996,0.442,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+DLR-2407-098,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.73,1.026,0.198,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+DLR-2407-098,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.66,1.027,0.397,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+ALV-2407-099,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.36,1.053,0.16,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+ALV-2407-099,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.27,1.054,0.319,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2407-100,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.5,0.998,0.222,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+AMA-2407-100,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.46,0.998,0.446,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2407-101,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.1,0.994,0.225,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+AMA-2407-101,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.1,0.991,0.452,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2407-103,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.74,1.02,0.198,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2407-103,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.64,1.02,0.396,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,False,"caracteristico, porem alterado",odor alterado,True
+DLL-2407-104,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.65,1.033,0.119,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DLL-2407-104,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.59,1.032,0.238,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DLR-2407-105,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.67,1.023,0.196,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLR-2407-105,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.62,1.024,0.392,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+AMA-2407-106,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.34,0.985,0.225,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+AMA-2407-106,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.31,0.986,0.451,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+AMA-2408-107,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.12,0.992,0.222,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+AMA-2408-107,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.03,0.99,0.445,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+ALV-2408-108,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.01,1.044,0.169,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2408-108,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,3.96,1.043,0.337,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+ALV-2408-109,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.19,1.048,0.168,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+ALV-2408-109,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.07,1.049,0.335,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+AMA-2408-110,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.02,0.996,0.225,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+AMA-2408-110,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,2.95,0.997,0.452,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+ALV-2408-111,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,3.85,1.048,0.168,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2408-111,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,3.88,1.046,0.334,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+LMU-2408-112,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.4,1.01,0.192,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2408-112,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.35,1.009,0.383,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2408-113,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.49,1.033,0.195,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+DLR-2408-113,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.44,1.032,0.391,4,quebra de emulsao com sobrenadante limpido,0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+LMU-2408-114,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.13,1.009,0.19,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+LMU-2408-114,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.06,1.011,0.38,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+DLL-2408-118,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.23,1.031,0.119,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DLL-2408-118,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.25,1.031,0.239,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+ALV-2408-119,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.33,1.035,0.162,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2408-119,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.29,1.037,0.324,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+ALV-2408-120,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.22,1.041,0.157,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+ALV-2408-120,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.21,1.042,0.313,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DES-2408-121,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.92,1.012,0.111,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+DES-2408-121,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.87,1.014,0.223,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DES-2408-122,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.81,1.005,0.111,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DES-2408-122,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.81,1.003,0.222,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+LMU-2409-123,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.52,1.009,0.193,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+LMU-2409-123,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.54,1.01,0.385,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2409-124,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.82,1.051,0.158,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2409-124,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.77,1.054,0.315,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2409-125,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.27,0.987,0.219,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2409-125,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.28,0.991,0.439,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2409-126,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,3.93,1.046,0.161,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2409-126,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,3.88,1.047,0.321,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2409-127,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,9.87,1.006,0.19,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2409-127,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,9.82,1.007,0.38,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+AMA-2409-128,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.48,0.994,0.219,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+AMA-2409-128,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.4,0.993,0.44,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+AMA-2409-129,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.05,1.007,0.217,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+AMA-2409-129,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,2.95,1.009,0.435,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+ALV-2409-130,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.11,1.042,0.162,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2409-130,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.08,1.043,0.323,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+LMU-2409-132,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.61,1.011,0.192,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2409-132,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.58,1.015,0.384,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2409-134,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.37,1.05,0.165,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2409-134,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.33,1.054,0.328,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+LMU-2409-135,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,9.96,1.012,0.193,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2409-135,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,9.99,1.011,0.385,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+LMU-2409-139,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.08,1.005,0.192,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2409-139,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.03,1.009,0.384,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+ALV-2409-140,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,3.78,1.041,0.164,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+ALV-2409-140,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,3.81,1.044,0.327,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2409-141,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.07,1.01,0.192,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+LMU-2409-141,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.02,1.013,0.384,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DES-2409-142,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.59,1.006,0.11,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DES-2409-142,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.52,1.008,0.22,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DLR-2409-144,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.97,1.019,0.197,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2409-144,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.9,1.017,0.394,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+DES-2409-145,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.8,1.001,0.112,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+DES-2409-145,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.79,1.004,0.224,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+ALV-2409-148,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.38,1.049,0.156,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+ALV-2409-148,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.3,1.05,0.311,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2409-149,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,3.99,1.041,0.159,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+ALV-2409-149,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,3.98,1.043,0.318,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+AMA-2409-150,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.14,0.992,0.219,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2409-150,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.05,0.993,0.44,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+ALV-2409-151,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.21,1.054,0.165,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+ALV-2409-151,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.12,1.052,0.328,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+AMA-2410-152,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.29,0.994,0.223,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2410-152,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.21,0.996,0.448,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DES-2410-154,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.25,1.012,0.109,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DES-2410-154,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.23,1.011,0.219,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLR-2410-155,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.48,1.024,0.195,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2410-155,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.48,1.023,0.39,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+LMU-2410-156,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.42,1.013,0.192,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2410-156,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.45,1.016,0.383,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2410-158,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.76,1.052,0.161,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+ALV-2410-158,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.78,1.053,0.321,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+DES-2410-161,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.63,1.012,0.111,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DES-2410-161,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.57,1.011,0.222,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DES-2410-162,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.85,1.002,0.111,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DES-2410-162,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.84,1.003,0.223,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2410-164,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.21,1.048,0.164,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2410-164,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.17,1.052,0.328,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DES-2410-165,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.11,1.015,0.112,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DES-2410-165,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.06,1.014,0.224,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+DES-2410-166,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.75,0.995,0.111,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DES-2410-166,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.78,0.998,0.222,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2411-168,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.43,1.043,0.159,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2411-168,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.45,1.043,0.318,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DES-2411-169,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.58,1.001,0.11,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DES-2411-169,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.61,1.0,0.221,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DES-2411-170,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.86,1.013,0.11,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DES-2411-170,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.87,1.012,0.221,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2411-171,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.21,1.006,0.221,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+AMA-2411-171,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.15,1.006,0.443,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DES-2411-172,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.88,1.0,0.111,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DES-2411-172,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.77,1.0,0.222,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+LMU-2411-174,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.73,1.013,0.194,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2411-174,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.75,1.01,0.387,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2411-175,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.35,1.002,0.226,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+AMA-2411-175,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.27,1.005,0.454,4,separacao franca de fases; coalescencia evidente,0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+DLR-2411-176,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.47,1.022,0.197,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2411-176,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.56,1.019,0.394,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DES-2411-177,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.8,1.005,0.109,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,False,"caracteristico, porem alterado",odor alterado,True
+DES-2411-177,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.79,1.007,0.219,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2411-178,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,9.87,1.005,0.194,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+LMU-2411-178,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,9.82,1.005,0.388,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+ALV-2411-179,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.37,1.052,0.159,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2411-179,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.35,1.056,0.318,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+ALV-2411-180,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.25,1.058,0.158,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+ALV-2411-180,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.16,1.057,0.315,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+AMA-2411-181,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.11,0.993,0.221,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+AMA-2411-181,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.09,0.991,0.444,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+LMU-2411-182,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.48,1.012,0.193,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+LMU-2411-182,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.46,1.01,0.385,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DLR-2411-184,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.58,1.02,0.2,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2411-184,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.51,1.023,0.399,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DES-2411-185,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.19,0.999,0.109,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DES-2411-185,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.17,1.003,0.218,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2412-186,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,3.95,1.055,0.162,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+ALV-2412-186,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,3.87,1.058,0.324,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+DLR-2412-187,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.78,1.028,0.196,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2412-187,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.84,1.028,0.392,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+AMA-2412-188,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.3,0.992,0.224,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+AMA-2412-188,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.22,0.992,0.45,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+AMA-2412-189,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.16,0.994,0.22,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+AMA-2412-189,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.1,0.997,0.442,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLL-2412-190,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.58,1.027,0.119,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLL-2412-190,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.46,1.03,0.238,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DES-2412-191,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.24,1.009,0.112,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+DES-2412-191,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.14,1.007,0.224,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DLL-2412-192,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.45,1.033,0.119,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLL-2412-192,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.45,1.032,0.237,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2412-193,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.93,1.011,0.196,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2412-193,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.83,1.012,0.393,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2412-194,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.42,1.013,0.194,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2412-194,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.39,1.014,0.387,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2412-195,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.47,1.032,0.122,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DLL-2412-195,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.41,1.031,0.243,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DES-2412-196,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.56,1.003,0.112,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DES-2412-196,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.54,1.003,0.224,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+ALV-2412-198,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.01,1.05,0.159,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+ALV-2412-198,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,3.85,1.054,0.317,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+ALV-2412-200,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.07,1.046,0.159,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+ALV-2412-200,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.01,1.045,0.317,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+DLR-2412-201,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.43,1.016,0.194,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2412-201,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.36,1.017,0.388,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2501-203,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.55,1.012,0.19,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+LMU-2501-203,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.47,1.011,0.379,4,separacao franca de fases; coalescencia evidente,0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+DLR-2501-204,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,10.21,1.024,0.196,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2501-204,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,10.17,1.024,0.391,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+DLL-2501-205,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.33,1.026,0.119,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2501-205,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.35,1.023,0.237,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2501-206,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.48,1.036,0.119,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2501-206,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.43,1.037,0.238,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DES-2501-208,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.19,1.003,0.11,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+DES-2501-208,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.15,1.008,0.22,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2501-209,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.23,1.053,0.165,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2501-209,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.13,1.051,0.329,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2501-210,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.12,1.007,0.22,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+AMA-2501-210,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.04,1.003,0.442,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2501-211,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.38,1.028,0.119,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+DLL-2501-211,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.37,1.027,0.239,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+DLL-2501-212,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.77,1.039,0.12,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DLL-2501-212,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.78,1.041,0.239,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2501-213,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.37,1.006,0.194,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2501-213,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.32,1.013,0.387,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DES-2501-214,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.99,1.006,0.111,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DES-2501-214,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.9,1.001,0.223,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2501-215,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.02,0.996,0.218,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+AMA-2501-215,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,2.94,0.999,0.437,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DES-2501-216,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.89,1.007,0.112,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DES-2501-216,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.91,1.006,0.225,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLR-2501-217,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.37,1.014,0.196,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2501-217,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.37,1.012,0.392,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DLL-2501-218,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.62,1.038,0.121,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DLL-2501-218,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.63,1.035,0.242,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2501-219,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.24,1.017,0.197,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2501-219,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.16,1.019,0.393,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2501-220,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.43,1.02,0.196,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DLR-2501-220,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.41,1.023,0.391,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DLL-2501-221,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.33,1.039,0.118,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2501-221,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.29,1.038,0.236,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2501-222,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.57,1.036,0.118,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2501-222,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.54,1.037,0.235,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2501-223,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.24,1.001,0.22,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+AMA-2501-223,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.11,0.999,0.441,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DLR-2501-224,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.96,1.021,0.196,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DLR-2501-224,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.95,1.022,0.392,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+ALV-2502-226,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.4,1.042,0.165,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+ALV-2502-226,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.35,1.041,0.328,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,False,"caracteristico, porem alterado",odor alterado,True
+DES-2502-227,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.07,1.013,0.113,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DES-2502-227,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.03,1.014,0.227,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+ALV-2502-228,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.22,1.052,0.163,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,False,"caracteristico, porem alterado",odor alterado,True
+ALV-2502-228,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.14,1.054,0.326,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2502-229,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.17,1.011,0.193,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2502-229,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.13,1.006,0.386,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+LMU-2502-230,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.3,1.019,0.192,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+LMU-2502-230,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.3,1.022,0.384,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2502-232,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.51,1.023,0.12,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2502-232,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.45,1.025,0.239,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DLR-2502-233,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.64,1.027,0.197,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DLR-2502-233,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.66,1.028,0.393,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+DLL-2502-236,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.53,1.03,0.118,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2502-236,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.52,1.031,0.237,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2502-237,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.52,1.006,0.221,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2502-237,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.53,1.007,0.443,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLL-2502-238,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.62,1.038,0.121,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DLL-2502-238,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.63,1.039,0.242,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2502-239,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,3.7,1.049,0.165,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2502-239,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,3.72,1.052,0.328,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+DES-2503-240,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.26,1.007,0.111,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+DES-2503-240,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.17,1.012,0.223,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DES-2503-241,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.91,1.007,0.111,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DES-2503-241,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.91,1.007,0.222,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2503-242,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.21,0.991,0.217,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2503-242,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.24,0.99,0.437,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+LMU-2503-243,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.03,1.001,0.193,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+LMU-2503-243,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.04,1.004,0.386,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2503-244,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.39,1.046,0.16,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2503-244,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.33,1.049,0.32,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+AMA-2503-245,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,2.97,1.002,0.223,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+AMA-2503-245,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,2.93,1.004,0.446,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+DLR-2503-246,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.65,1.015,0.195,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2503-246,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.63,1.015,0.389,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2503-248,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,10.18,1.023,0.197,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2503-248,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,10.19,1.022,0.395,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2503-249,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.69,1.028,0.121,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLL-2503-249,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.66,1.027,0.242,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+LMU-2503-250,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.09,1.018,0.192,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+LMU-2503-250,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.04,1.015,0.383,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+ALV-2503-251,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.13,1.035,0.163,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+ALV-2503-251,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.06,1.036,0.325,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DLR-2503-252,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.78,1.028,0.195,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2503-252,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.67,1.027,0.39,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2503-254,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.03,1.012,0.194,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+LMU-2503-254,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,9.93,1.01,0.388,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+DLL-2503-255,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.96,1.03,0.12,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DLL-2503-255,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.81,1.029,0.24,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+DLL-2503-256,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.58,1.035,0.119,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DLL-2503-256,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.53,1.035,0.237,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+ALV-2503-257,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.08,1.05,0.162,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2503-257,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.1,1.049,0.322,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DES-2503-258,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.78,1.001,0.11,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+DES-2503-258,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.76,1.002,0.22,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2503-259,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.01,1.011,0.193,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2503-259,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.01,1.01,0.386,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DLR-2503-260,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.88,1.026,0.194,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2503-260,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.81,1.026,0.389,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+DLR-2503-261,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.17,1.026,0.197,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2503-261,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.13,1.024,0.394,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+LMU-2503-262,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.35,1.006,0.194,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2503-262,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.3,1.005,0.387,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+DES-2504-263,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.92,1.005,0.11,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+DES-2504-263,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.9,1.006,0.22,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+AMA-2504-264,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.41,0.995,0.22,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2504-264,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.38,0.995,0.441,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2504-265,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.1,1.046,0.164,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2504-265,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.09,1.045,0.328,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DES-2504-266,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.74,1.006,0.111,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DES-2504-266,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.76,1.008,0.223,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2504-267,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,9.88,1.018,0.193,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+LMU-2504-267,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,9.88,1.018,0.386,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2504-268,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,9.95,1.011,0.194,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+LMU-2504-268,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,9.86,1.013,0.388,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLR-2504-272,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.83,1.024,0.194,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,False,"alterado, notas rancosas",odor alterado,True
+DLR-2504-272,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.78,1.028,0.388,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2504-273,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.82,1.01,0.196,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLR-2504-273,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.85,1.015,0.392,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2504-274,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.46,1.003,0.222,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,False,"caracteristico, porem alterado",odor alterado,True
+AMA-2504-274,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.37,1.005,0.445,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+AMA-2505-275,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,2.96,0.992,0.223,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2505-275,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,2.99,0.996,0.448,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2505-276,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.37,1.008,0.193,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,False,"alterado, notas rancosas",odor alterado,True
+LMU-2505-276,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.32,1.008,0.386,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DLR-2505-277,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.57,1.031,0.196,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2505-277,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.59,1.031,0.392,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+AMA-2505-278,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.46,1.001,0.223,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+AMA-2505-278,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.42,1.003,0.448,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico,,False
+AMA-2505-279,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,2.93,0.994,0.22,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,False,"alterado, notas rancosas",odor alterado,True
+AMA-2505-279,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,2.87,0.994,0.441,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2505-281,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.33,1.048,0.161,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+ALV-2505-281,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.31,1.049,0.321,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2505-283,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.35,1.048,0.163,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico do produto,,False
+ALV-2505-283,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.3,1.049,0.325,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+DES-2505-284,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.89,1.006,0.113,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DES-2505-284,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.83,1.006,0.226,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico,,False
+DLR-2505-285,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.34,1.023,0.197,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+DLR-2505-285,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.38,1.024,0.393,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2505-286,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.36,1.009,0.191,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2505-286,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.28,1.009,0.382,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,,False
+AMA-2505-287,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.17,1.012,0.226,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,densidade fora de faixa,True
+AMA-2505-287,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.12,1.013,0.454,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico,densidade fora de faixa,True
+DES-2505-288,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.87,1.005,0.111,2,"cremeacao visivel na superficie, reversivel a agitacao",0,conforme padrao,True,caracteristico do produto,,False
+DES-2505-288,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.9,1.004,0.223,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+LMU-2506-289,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.03,1.011,0.192,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+LMU-2506-289,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,9.97,1.011,0.383,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+DES-2506-290,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.7,1.015,0.111,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+DES-2506-290,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,6.65,1.014,0.222,0,"liquido homogeneo, sem alteracao",0,conforme padrao,True,caracteristico do produto,,False
+DLR-2506-291,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,15,9.26,1.023,0.199,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+DLR-2506-291,Detergente Liquido para Roupas,2,Choque Termico 5C/40C,30,9.28,1.021,0.398,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2506-292,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.04,1.008,0.194,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+LMU-2506-292,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,9.99,1.009,0.387,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico,,False
+ALV-2506-293,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,3.75,1.035,0.158,0,"liquido homogeneo, limpido",0,conforme padrao,True,caracteristico,,False
+ALV-2506-293,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,3.75,1.038,0.316,0,"liquido homogeneo, levemente opalescente",0,conforme padrao,True,caracteristico do produto,,False
+AMA-2506-294,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,15,3.23,0.996,0.219,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico do produto,,False
+AMA-2506-294,Amaciante de Roupas (esterquat),2,Choque Termico 5C/40C,30,3.18,0.995,0.439,1,liquido homogeneo com leve pelicula na superficie,0,conforme padrao,True,caracteristico,,False
+ALV-2506-295,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,15,4.13,1.051,0.159,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,False,"alterado, notas rancosas",odor alterado,True
+ALV-2506-295,Alvejante Liquido sem Cloro,2,Choque Termico 5C/40C,30,4.03,1.052,0.317,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DLL-2506-296,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,15,7.5,1.031,0.118,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DLL-2506-296,Detergente Liquido Lava-Loucas,2,Choque Termico 5C/40C,30,7.51,1.033,0.236,3,"separacao parcial de fase, camada superior definida",0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+DES-2506-297,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.3,0.997,0.11,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico,aspecto nao conforme,True
+DES-2506-297,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.28,0.999,0.221,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DES-2506-298,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,7.22,1.011,0.11,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+DES-2506-298,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.28,1.007,0.22,3,sedimento no fundo nao reincorporavel,0,conforme padrao,True,caracteristico do produto,aspecto nao conforme,True
+LMU-2506-299,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,15,10.65,1.014,0.194,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+LMU-2506-299,Limpador Multiuso Alcalino,2,Choque Termico 5C/40C,30,10.59,1.014,0.387,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False
+DES-2506-300,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,15,6.96,1.001,0.111,2,"leve cremeacao na superficie, porem conforme",0,conforme padrao,True,caracteristico,,False
+DES-2506-300,Desinfetante Quaternario Concentrado,2,Choque Termico 5C/40C,30,7.04,1.002,0.222,1,"homogeneo, leve turvacao em relacao ao padrao",0,conforme padrao,True,caracteristico do produto,,False

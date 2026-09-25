@@ -1,0 +1,67 @@
+produto_familia,vigente_de,vigente_ate,versao_spec,ensaio,criterio_tipo,limite_min,limite_max,excecao_permitida,justificativa_tecnica
+Detergente Liquido Lava-Loucas,2024-01-01,,v1.0,ph,faixa,6.8,8.6,,Faixa de estabilidade quimica do sistema
+Detergente Liquido Lava-Loucas,2024-01-01,,v1.0,densidade_g_cm3,faixa,1.02,1.045,,Controle de dosagem e ar incorporado
+Detergente Liquido Lava-Loucas,2024-01-01,2024-09-30,v1.0,delta_e_liberacao,max,,2.0,,"Tolerancia inicial, herdada de avaliacao visual contra padrao"
+Detergente Liquido Lava-Loucas,2024-10-01,,v1.1,delta_e_liberacao,max,,1.5,,Aperto apos implantacao de colorimetro de bancada: dE00 ~1 e o limiar de percepcao visual (ASTM D2244)
+Detergente Liquido Lava-Loucas,2024-01-01,,v1.0,aspecto_score,max,,2,,Escore 3+ indica separacao de fase
+Detergente Liquido Lava-Loucas,2024-01-01,,v1.0,estufa50_score,max,,2,,Triagem de estabilidade termica de curto prazo
+Detergente Liquido Lava-Loucas,2024-01-01,,v1.0,centrifugacao_score,max,,2,,Estresse gravitacional acelerado
+Detergente Liquido Lava-Loucas,2024-01-01,,v1.0,agitacao_score,max,,2,,Reversibilidade da homogeneizacao
+Detergente Liquido Lava-Loucas,2024-01-01,,v1.0,odor_conforme,booleano,,,,Indicador de rancidez e degradacao de fragrancia
+Detergente Liquido Lava-Loucas,2024-01-01,,v1.0,delta_e_estabilidade,max,,3.0,,Deriva de cor aceitavel ao longo do estudo de estabilidade
+Detergente Liquido Lava-Loucas,2024-01-01,,v1.0,delta_e_estabilidade_luz,max,,6.0,Aplica-se somente a condicao Luz Solar,Endpoint de fotoestabilidade: alteracao de cor sob exposicao solar direta nao e criterio de liberacao (ICH Q1B)
+Detergente Liquido para Roupas,2024-01-01,,v1.0,ph,faixa,8.5,10.5,,Faixa de estabilidade quimica do sistema
+Detergente Liquido para Roupas,2024-01-01,,v1.0,densidade_g_cm3,faixa,1.01,1.035,,Controle de dosagem e ar incorporado
+Detergente Liquido para Roupas,2024-01-01,2024-09-30,v1.0,delta_e_liberacao,max,,2.0,,"Tolerancia inicial, herdada de avaliacao visual contra padrao"
+Detergente Liquido para Roupas,2024-10-01,,v1.1,delta_e_liberacao,max,,1.5,,Aperto apos implantacao de colorimetro de bancada: dE00 ~1 e o limiar de percepcao visual (ASTM D2244)
+Detergente Liquido para Roupas,2024-01-01,,v1.0,aspecto_score,max,,2,,Escore 3+ indica separacao de fase
+Detergente Liquido para Roupas,2024-01-01,,v1.0,estufa50_score,max,,2,,Triagem de estabilidade termica de curto prazo
+Detergente Liquido para Roupas,2024-01-01,,v1.0,centrifugacao_score,max,,2,,Estresse gravitacional acelerado
+Detergente Liquido para Roupas,2024-01-01,,v1.0,agitacao_score,max,,2,,Reversibilidade da homogeneizacao
+Detergente Liquido para Roupas,2024-01-01,,v1.0,odor_conforme,booleano,,,,Indicador de rancidez e degradacao de fragrancia
+Detergente Liquido para Roupas,2024-01-01,,v1.0,delta_e_estabilidade,max,,3.0,,Deriva de cor aceitavel ao longo do estudo de estabilidade
+Detergente Liquido para Roupas,2024-01-01,,v1.0,delta_e_estabilidade_luz,max,,6.0,Aplica-se somente a condicao Luz Solar,Endpoint de fotoestabilidade: alteracao de cor sob exposicao solar direta nao e criterio de liberacao (ICH Q1B)
+Limpador Multiuso Alcalino,2024-01-01,,v1.0,ph,faixa,9.5,11.0,,Faixa de estabilidade quimica do sistema
+Limpador Multiuso Alcalino,2024-01-01,,v1.0,densidade_g_cm3,faixa,1.0,1.025,,Controle de dosagem e ar incorporado
+Limpador Multiuso Alcalino,2024-01-01,2024-09-30,v1.0,delta_e_liberacao,max,,2.0,,"Tolerancia inicial, herdada de avaliacao visual contra padrao"
+Limpador Multiuso Alcalino,2024-10-01,,v1.1,delta_e_liberacao,max,,1.5,,Aperto apos implantacao de colorimetro de bancada: dE00 ~1 e o limiar de percepcao visual (ASTM D2244)
+Limpador Multiuso Alcalino,2024-01-01,,v1.0,aspecto_score,max,,2,,Escore 3+ indica separacao de fase
+Limpador Multiuso Alcalino,2024-01-01,,v1.0,estufa50_score,max,,2,,Triagem de estabilidade termica de curto prazo
+Limpador Multiuso Alcalino,2024-01-01,,v1.0,centrifugacao_score,max,,2,,Estresse gravitacional acelerado
+Limpador Multiuso Alcalino,2024-01-01,,v1.0,agitacao_score,max,,2,,Reversibilidade da homogeneizacao
+Limpador Multiuso Alcalino,2024-01-01,,v1.0,odor_conforme,booleano,,,,Indicador de rancidez e degradacao de fragrancia
+Limpador Multiuso Alcalino,2024-01-01,,v1.0,delta_e_estabilidade,max,,3.0,,Deriva de cor aceitavel ao longo do estudo de estabilidade
+Limpador Multiuso Alcalino,2024-01-01,,v1.0,delta_e_estabilidade_luz,max,,6.0,Aplica-se somente a condicao Luz Solar,Endpoint de fotoestabilidade: alteracao de cor sob exposicao solar direta nao e criterio de liberacao (ICH Q1B)
+Desinfetante Quaternario Concentrado,2024-01-01,,v1.0,ph,faixa,6.0,8.0,,Faixa de estabilidade quimica do sistema
+Desinfetante Quaternario Concentrado,2024-01-01,,v1.0,densidade_g_cm3,faixa,0.995,1.02,,Controle de dosagem e ar incorporado
+Desinfetante Quaternario Concentrado,2024-01-01,2024-09-30,v1.0,delta_e_liberacao,max,,2.0,,"Tolerancia inicial, herdada de avaliacao visual contra padrao"
+Desinfetante Quaternario Concentrado,2024-10-01,,v1.1,delta_e_liberacao,max,,1.5,,Aperto apos implantacao de colorimetro de bancada: dE00 ~1 e o limiar de percepcao visual (ASTM D2244)
+Desinfetante Quaternario Concentrado,2024-01-01,,v1.0,aspecto_score,max,,2,,Escore 3+ indica separacao de fase
+Desinfetante Quaternario Concentrado,2024-01-01,,v1.0,estufa50_score,max,,2,,Triagem de estabilidade termica de curto prazo
+Desinfetante Quaternario Concentrado,2024-01-01,,v1.0,centrifugacao_score,max,,2,,Estresse gravitacional acelerado
+Desinfetante Quaternario Concentrado,2024-01-01,,v1.0,agitacao_score,max,,2,Ensaio nao aplicavel a familia,Reversibilidade da homogeneizacao
+Desinfetante Quaternario Concentrado,2024-01-01,,v1.0,odor_conforme,booleano,,,,Indicador de rancidez e degradacao de fragrancia
+Desinfetante Quaternario Concentrado,2024-01-01,,v1.0,delta_e_estabilidade,max,,3.0,,Deriva de cor aceitavel ao longo do estudo de estabilidade
+Desinfetante Quaternario Concentrado,2024-01-01,,v1.0,delta_e_estabilidade_luz,max,,6.0,Aplica-se somente a condicao Luz Solar,Endpoint de fotoestabilidade: alteracao de cor sob exposicao solar direta nao e criterio de liberacao (ICH Q1B)
+Amaciante de Roupas (esterquat),2024-01-01,,v1.0,ph,faixa,2.5,4.0,,Faixa de estabilidade quimica do sistema
+Amaciante de Roupas (esterquat),2024-01-01,,v1.0,densidade_g_cm3,faixa,0.985,1.01,,Controle de dosagem e ar incorporado
+Amaciante de Roupas (esterquat),2024-01-01,2024-09-30,v1.0,delta_e_liberacao,max,,2.0,,"Tolerancia inicial, herdada de avaliacao visual contra padrao"
+Amaciante de Roupas (esterquat),2024-10-01,,v1.1,delta_e_liberacao,max,,1.5,,Aperto apos implantacao de colorimetro de bancada: dE00 ~1 e o limiar de percepcao visual (ASTM D2244)
+Amaciante de Roupas (esterquat),2024-01-01,,v1.0,aspecto_score,max,,2,,Escore 3+ indica separacao de fase
+Amaciante de Roupas (esterquat),2024-01-01,,v1.0,estufa50_score,max,,2,,Triagem de estabilidade termica de curto prazo
+Amaciante de Roupas (esterquat),2024-01-01,,v1.0,centrifugacao_score,max,,3,Sistema catonico: leve cremeacao reversivel a agitacao e esperada na centrifugacao; aceitar escore <= 3.,Estresse gravitacional acelerado
+Amaciante de Roupas (esterquat),2024-01-01,,v1.0,agitacao_score,max,,2,,Reversibilidade da homogeneizacao
+Amaciante de Roupas (esterquat),2024-01-01,,v1.0,odor_conforme,booleano,,,,Indicador de rancidez e degradacao de fragrancia
+Amaciante de Roupas (esterquat),2024-01-01,,v1.0,delta_e_estabilidade,max,,3.0,,Deriva de cor aceitavel ao longo do estudo de estabilidade
+Amaciante de Roupas (esterquat),2024-01-01,,v1.0,delta_e_estabilidade_luz,max,,6.0,Aplica-se somente a condicao Luz Solar,Endpoint de fotoestabilidade: alteracao de cor sob exposicao solar direta nao e criterio de liberacao (ICH Q1B)
+Alvejante Liquido sem Cloro,2024-01-01,,v1.0,ph,faixa,3.5,5.0,,Faixa de estabilidade quimica do sistema
+Alvejante Liquido sem Cloro,2024-01-01,,v1.0,densidade_g_cm3,faixa,1.03,1.06,,Controle de dosagem e ar incorporado
+Alvejante Liquido sem Cloro,2024-01-01,2024-09-30,v1.0,delta_e_liberacao,max,,2.0,,"Tolerancia inicial, herdada de avaliacao visual contra padrao"
+Alvejante Liquido sem Cloro,2024-10-01,,v1.1,delta_e_liberacao,max,,1.5,,Aperto apos implantacao de colorimetro de bancada: dE00 ~1 e o limiar de percepcao visual (ASTM D2244)
+Alvejante Liquido sem Cloro,2024-01-01,,v1.0,aspecto_score,max,,2,,Escore 3+ indica separacao de fase
+Alvejante Liquido sem Cloro,2024-01-01,,v1.0,estufa50_score,max,,2,,Triagem de estabilidade termica de curto prazo
+Alvejante Liquido sem Cloro,2024-01-01,,v1.0,centrifugacao_score,max,,3,Estabilizante insoluvel: precipitado fino no fundo apos centrifugacao e considerado normal; aceitar escore <= 3.,Estresse gravitacional acelerado
+Alvejante Liquido sem Cloro,2024-01-01,,v1.0,agitacao_score,max,,2,,Reversibilidade da homogeneizacao
+Alvejante Liquido sem Cloro,2024-01-01,,v1.0,odor_conforme,booleano,,,,Indicador de rancidez e degradacao de fragrancia
+Alvejante Liquido sem Cloro,2024-01-01,,v1.0,delta_e_estabilidade,max,,3.0,,Deriva de cor aceitavel ao longo do estudo de estabilidade
+Alvejante Liquido sem Cloro,2024-01-01,,v1.0,delta_e_estabilidade_luz,max,,6.0,Aplica-se somente a condicao Luz Solar,Endpoint de fotoestabilidade: alteracao de cor sob exposicao solar direta nao e criterio de liberacao (ICH Q1B)

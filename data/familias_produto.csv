@@ -1,0 +1,7 @@
+sigla,produto_familia,classificacao_anvisa,ph_min,ph_alvo,ph_max,densidade_min,densidade_alvo,densidade_max,agitacao_magnetica_aplicavel,excecao_centrifugacao,fonte_faixa_ph
+DLL,Detergente Liquido Lava-Loucas,Risco 1,6.8,7.6,8.6,1.02,1.032,1.045,True,,"[LIT] formulacoes de lava-loucas: pH 6,8 a 9,0"
+DLR,Detergente Liquido para Roupas,Risco 1,8.5,9.6,10.5,1.01,1.022,1.035,True,,"[LIT] produtos de lavanderia: pH 9 a 11; formulacao-modelo de fornecedor: pH 10,5 e densidade 1,02"
+LMU,Limpador Multiuso Alcalino,Risco 1,9.5,10.2,11.0,1.0,1.01,1.025,True,,"[LIT+EST] teto de 11,0 como margem do corte regulatorio de 11,5 (Risco 1)"
+DES,Desinfetante Quaternario Concentrado,Risco 2,6.0,7.0,8.0,0.995,1.005,1.02,False,,[EST] quaternario formulado proximo da neutralidade; Risco 2 por atividade antimicrobiana
+AMA,Amaciante de Roupas (esterquat),Risco 1,2.5,3.2,4.0,0.985,0.996,1.01,True,Sistema catonico: leve cremeacao reversivel a agitacao e esperada na centrifugacao; aceitar escore <= 3.,"[LIT] esterquat exige pH 2,0 a 5,0, preferencialmente 2,5 a 4,0, para estabilidade hidrolitica do ester"
+ALV,Alvejante Liquido sem Cloro,Risco 1,3.5,4.2,5.0,1.03,1.045,1.06,True,Estabilizante insoluvel: precipitado fino no fundo apos centrifugacao e considerado normal; aceitar escore <= 3.,[EST] peroxido de hidrogenio se decompoe por catalise basica; alvejantes liquidos de oxigenio sao estabilizados em meio acido

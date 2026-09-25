@@ -1,0 +1,17 @@
+estagio,ensaio,n_medicoes_oos
+1,agitacao_score,18
+1,aspecto_score,14
+1,centrifugacao_score,29
+1,delta_e_liberacao,4
+1,densidade_g_cm3,6
+1,estufa50_score,24
+1,odor_conforme,7
+1,ph,1
+2,aspecto_score,34
+2,densidade_g_cm3,2
+2,odor_conforme,11
+2,ph,2
+3,aspecto_score,87
+3,densidade_g_cm3,30
+3,odor_conforme,51
+3,ph,40
