@@ -1,10 +1,19 @@
 # Funil de estabilidade de produtos formulados
 
+![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-2.3-150458?logo=pandas&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.9-F7931E?logo=scikitlearn&logoColor=white)
+![Pandera](https://img.shields.io/badge/Pandera-0.32-schema%20validation-2E6B8A)
+![matplotlib](https://img.shields.io/badge/matplotlib-3.11-plots-11557C)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 Simulação de controle de qualidade e estudo de estabilidade de saneantes (produtos de limpeza) formulados, modelado como o funil de três estágios usado na prática de laboratório de desenvolvimento: triagem de bancada → estabilidade preliminar → estabilidade acelerada.
 
 A pergunta que o projeto responde: **é possível prever, com os ensaios do dia zero, quais formulações sobrevivem aos 90 dias de estudo de estabilidade?**
 
 > **Status:** completo — dataset, validação, funil, previsão antecipada e clusterização de assinaturas de degradação.
+
+📄 **Leitura rápida aqui no README** | 📊 **[Relatório técnico completo](relatorio/relatorio_tecnico.md)** — metodologia, justificativa de cada decisão de domínio e número por número de cada figura
 
 ## Por que isso importa
 
