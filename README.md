@@ -3,8 +3,8 @@
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
 ![pandas](https://img.shields.io/badge/pandas-2.3-150458?logo=pandas&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.9-F7931E?logo=scikitlearn&logoColor=white)
-![Pandera](https://img.shields.io/badge/Pandera-0.32-schema%20validation-2E6B8A)
-![matplotlib](https://img.shields.io/badge/matplotlib-3.11-plots-11557C)
+![Pandera](https://img.shields.io/badge/Pandera-0.32-2E6B8A)
+![matplotlib](https://img.shields.io/badge/matplotlib-3.11-11557C)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 Simulação de controle de qualidade e estudo de estabilidade de saneantes (produtos de limpeza) formulados, modelado como o funil de três estágios usado na prática de laboratório de desenvolvimento: triagem de bancada → estabilidade preliminar → estabilidade acelerada.
@@ -57,7 +57,7 @@ Todo o pipeline é determinístico (seed 42): rodar do zero reproduz `data/` e `
 
 Das 300 formulações que entram no Teste Inicial, 241 passam o Estágio 1, 199 chegam à Estabilidade Acelerada e 127 sobrevivem aos 90 dias: 42,3% cumulativo (sobre tudo que entrou) e 63,8% condicional (sobre quem chegou ao Estágio 3). São perguntas diferentes; a definição de cada uma está em `relatorio/relatorio_tecnico.md`.
 
-![Funil, causas de reprovação e efeito do fornecedor]({{artifact:art_05caadba-a6c9-49eb-a4bb-3a1511178b88}})
+![Funil, causas de reprovação e efeito do fornecedor](output/figures/02_funil_causas_fornecedor.png)
 
 O fornecedor de tensoativo já separa levemente a aprovação no Teste Inicial (χ² = 7,14, p = 0,028, n = 300), e separa com muito mais força a sobrevivência aos 90 dias (χ² = 16,18, p < 0,001): FOR-B sobrevive a 32,2% contra 58,8% do FOR-C. O efeito existe desde o dia 0, mas fica bem mais forte com o tempo.
 
@@ -67,7 +67,7 @@ Os outros dois painéis da figura respondem duas perguntas complementares. O pai
 
 Um Random Forest treinado só com os ensaios do Teste Inicial (dia 0) prevê a sobrevivência aos 90 dias com AUC 0,821, contra 0,500 de baseline de classe majoritária (n = 44 lotes de teste, divisão temporal). É um ponto único, sem intervalo de confiança (ver Limitações). O recall na classe de falha é 55,6% (10 de 18 falhas capturadas), com limiar calibrado por custo (4:1 entre deixar passar uma falha e investigar uma formulação boa à toa).
 
-![Previsão antecipada: ganho por horizonte, matriz de confusão, importância e divisão temporal]({{artifact:art_f69051ce-7a05-47fc-b45b-3632c0233cd5}})
+![Previsão antecipada: ganho por horizonte, matriz de confusão, importância e divisão temporal](output/figures/03_previsao_antecipada.png)
 
 Esperar 30 ou 37 dias não melhora a previsão: a AUC fica entre 0,77 e 0,82 nos três horizontes, sem tendência de subida, porque o sinal que decide o desfecho já está presente no dia 0. A validação aleatória, mantida como controle, dá AUC entre 0,82 e 0,89, igual ou mais alta que a temporal em todos os horizontes.
 
@@ -75,11 +75,13 @@ Esperar 30 ou 37 dias não melhora a previsão: a AUC fica entre 0,77 e 0,82 nos
 
 Agrupando os 199 lotes que chegaram ao Estágio 3 pela assinatura de degradação (a inclinação de pH, amarelecimento e escurecimento em cada condição), o K-means encontra k = 2 (silhueta 0,39, confirmado por clusterização hierárquica Ward: ARI = 1,0 entre os dois métodos). O agrupamento corta as 6 famílias declaradas (ARI = 0,26 contra a família nominal): um cluster reúne Alvejante e Desinfetante, de química oxidante e mais fotossensível, e o outro reúne as quatro famílias à base de tensoativo, mais sensíveis a calor do que a luz.
 
-![Clusterização por assinatura de degradação]({{artifact:art_b25999ba-c708-4e9c-ab77-0d1605bb28a1}})
+![Clusterização por assinatura de degradação](output/figures/04_clusterizacao.png)
 
 ### Qualidade do dado (Passo 2)
 
 Dos 300 lotes, a regra reconstruída a partir da `spec_master` reproduz a disposição registrada em 292 (as 8 divergências restantes vêm todas de medição fisicamente impossível). Dez lotes foram reprovados indevidamente por erro de laboratório: a sonda PH-02 leu +0,26 de pH acima do real entre setembro e novembro de 2024. O kappa quadrático entre analistas ficou entre 0,84 e 0,92.
+
+![Viés de instrumento: pH registrado por sonda ao longo do tempo, com a janela de deriva destacada](output/figures/01_vies_instrumento.png)
 
 ## Decisões técnicas
 
