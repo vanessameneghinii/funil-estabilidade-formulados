@@ -87,6 +87,8 @@ O offset da sonda PH-02 é detectado comparando os dois instrumentos por períod
 
 Os dois testes são reportados juntos porque respondem perguntas diferentes: o mensal tem mais especificidade (localizaria com precisão de mês, se tivesse potência suficiente para isso), o trimestral tem mais sensibilidade (localiza com precisão de trimestre, mas de fato encontra o efeito). Reportar só um dos dois esconderia essa diferença de resolução, por isso os dois aparecem juntos, com a ressalva.
 
+![Viés de instrumento: pH registrado por sonda ao longo do tempo, com a janela de deriva destacada](../output/figures/01_vies_instrumento.png)
+
 ### 3.5 Detecção de fora de tendência nas séries de estabilidade: duas tentativas erradas, documentadas
 
 O script tentou, nesta ordem:
@@ -107,6 +109,8 @@ O script tentou, nesta ordem:
 ---
 
 ## 4. Análise do funil (`03_analise_funil.py`)
+
+![Funil, causas de reprovação e efeito do fornecedor](../output/figures/02_funil_causas_fornecedor.png)
 
 ### 4.1 Atrito, com as duas taxas separadas
 
@@ -149,6 +153,8 @@ O Alvejante tem a menor aprovação já no Estágio 1 (66,7%): é a única famí
 ---
 
 ## 5. Previsão antecipada (`04_previsao_antecipada.py`)
+
+![Previsão antecipada: ganho por horizonte, matriz de confusão, importância e divisão temporal](../output/figures/03_previsao_antecipada.png)
 
 ### 5.1 Pergunta e população
 
@@ -197,6 +203,8 @@ Importância por permutação (Random Forest, H0, divisão temporal, 30 repetiç
 ---
 
 ## 6. Clusterização por assinatura de degradação (`05_clusterizacao.py`)
+
+![Clusterização por assinatura de degradação](../output/figures/04_clusterizacao.png)
 
 ### 6.1 O vetor de entrada: inclinação da deriva por condição
 
