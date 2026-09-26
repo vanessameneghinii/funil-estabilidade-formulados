@@ -1,82 +1,82 @@
 {
-  "n_lotes": 209,
+  "n_lotes": 199,
   "dimensoes_vetor": 12,
   "lotes_com_valor_faltante": 0,
   "silhueta_por_k": {
-    "2": 0.396,
-    "3": 0.362,
-    "4": 0.348,
-    "5": 0.377,
-    "6": 0.328,
-    "7": 0.306,
-    "8": 0.297
+    "2": 0.387,
+    "3": 0.349,
+    "4": 0.347,
+    "5": 0.368,
+    "6": 0.327,
+    "7": 0.322,
+    "8": 0.299
   },
   "k_escolhido": 2,
-  "silhueta_kmeans": 0.396,
+  "silhueta_kmeans": 0.387,
   "tamanho_clusters": {
-    "0": 140,
-    "1": 69
+    "0": 60,
+    "1": 139
   },
   "ari_kmeans_vs_ward": 1.0,
-  "ari_cluster_vs_familia_declarada": 0.273,
+  "ari_cluster_vs_familia_declarada": 0.26,
   "cluster_x_familia": {
     "Alvejante Liquido sem Cloro": {
-      "0": 0,
-      "1": 32
-    },
-    "Amaciante de Roupas (esterquat)": {
-      "0": 29,
+      "0": 25,
       "1": 0
     },
+    "Amaciante de Roupas (esterquat)": {
+      "0": 0,
+      "1": 33
+    },
     "Desinfetante Quaternario Concentrado": {
+      "0": 35,
+      "1": 0
+    },
+    "Detergente Liquido Lava-Loucas": {
+      "0": 0,
+      "1": 44
+    },
+    "Detergente Liquido para Roupas": {
       "0": 0,
       "1": 37
     },
-    "Detergente Liquido Lava-Loucas": {
-      "0": 32,
-      "1": 0
-    },
-    "Detergente Liquido para Roupas": {
-      "0": 41,
-      "1": 0
-    },
     "Limpador Multiuso Alcalino": {
-      "0": 38,
-      "1": 0
+      "0": 0,
+      "1": 25
     }
   },
   "perfil_clusters": [
     {
       "cluster": 0,
-      "n_lotes": 140,
-      "incl_ph_Geladeira": -0.00011,
-      "incl_amarelecimento_Geladeira": 0.00053,
-      "incl_escurecimento_Geladeira": 0.00027,
-      "incl_ph_Ambiente": -0.00102,
-      "incl_amarelecimento_Ambiente": 0.00541,
-      "incl_escurecimento_Ambiente": 0.0027,
-      "incl_ph_Estufa": -0.00466,
-      "incl_amarelecimento_Estufa": 0.02538,
-      "incl_escurecimento_Estufa": 0.01269,
-      "incl_ph_Luz": -0.00167,
-      "incl_amarelecimento_Luz": 0.05331,
-      "incl_escurecimento_Luz": 0.02117
+      "n_lotes": 60,
+      "incl_ph_Geladeira": -0.00012,
+      "incl_amarelecimento_Geladeira": 0.00042,
+      "incl_escurecimento_Geladeira": 0.00021,
+      "incl_ph_Ambiente": -0.00095,
+      "incl_amarelecimento_Ambiente": 0.00423,
+      "incl_escurecimento_Ambiente": 0.00212,
+      "incl_ph_Estufa": -0.00438,
+      "incl_amarelecimento_Estufa": 0.01986,
+      "incl_escurecimento_Estufa": 0.00993,
+      "incl_ph_Luz": -0.00152,
+      "incl_amarelecimento_Luz": 0.06771,
+      "incl_escurecimento_Luz": 0.02632
     },
     {
       "cluster": 1,
-      "n_lotes": 69,
-      "incl_ph_Geladeira": -0.00014,
-      "incl_amarelecimento_Geladeira": 0.00041,
-      "incl_escurecimento_Geladeira": 0.00021,
-      "incl_ph_Ambiente": -0.00099,
-      "incl_amarelecimento_Ambiente": 0.00421,
-      "incl_escurecimento_Ambiente": 0.00211,
-      "incl_ph_Estufa": -0.00461,
-      "incl_amarelecimento_Estufa": 0.01977,
-      "incl_escurecimento_Estufa": 0.00989,
-      "incl_ph_Luz": -0.00175,
-      "incl_amarelecimento_Luz": 0.06797,
-      "incl_escurecimento_Luz": 0.02641
+      "n_lotes": 139,
+      "incl_ph_Geladeira": -0.00011,
+      "incl_amarelecimento_Geladeira": 0.00052,
+      "incl_escurecimento_Geladeira": 0.00026,
+      "incl_ph_Ambiente": -0.00101,
+      "incl_amarelecimento_Ambiente": 0.00531,
+      "incl_escurecimento_Ambiente": 0.00266,
+      "incl_ph_Estufa": -0.00455,
+      "incl_amarelecimento_Estufa": 0.02493,
+      "incl_escurecimento_Estufa": 0.01246,
+      "incl_ph_Luz": -0.00169,
+      "incl_amarelecimento_Luz": 0.0519,
+      "incl_escurecimento_Luz": 0.02062
     }
   ]
 }

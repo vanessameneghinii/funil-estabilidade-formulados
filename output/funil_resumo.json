@@ -2,117 +2,116 @@
   "n_lotes": 300,
   "atrito": {
     "entraram": 300,
-    "passaram_e1": 247,
-    "passaram_e2": 209,
-    "entraram_e3": 209,
-    "sobreviveram_90d": 128,
-    "taxa_sobrevivencia_cumulativa_pct": 42.7,
-    "taxa_sobrevivencia_condicional_pct": 61.2
+    "passaram_e1": 241,
+    "passaram_e2": 199,
+    "entraram_e3": 199,
+    "sobreviveram_90d": 127,
+    "taxa_sobrevivencia_cumulativa_pct": 42.3,
+    "taxa_sobrevivencia_condicional_pct": 63.8
   },
   "causas_por_estagio": {
     "1": {
-      "agitacao_score": 18,
-      "aspecto_score": 14,
-      "centrifugacao_score": 29,
-      "delta_e_liberacao": 4,
-      "densidade_g_cm3": 6,
-      "estufa50_score": 24,
+      "agitacao_score": 12,
+      "aspecto_score": 11,
+      "centrifugacao_score": 11,
+      "delta_e_liberacao": 7,
+      "densidade_g_cm3": 5,
+      "estufa50_score": 22,
       "odor_conforme": 7,
       "ph": 1
     },
     "2": {
-      "aspecto_score": 34,
-      "densidade_g_cm3": 2,
-      "odor_conforme": 11,
-      "ph": 2
+      "aspecto_score": 48,
+      "densidade_g_cm3": 3,
+      "odor_conforme": 9
     },
     "3": {
-      "aspecto_score": 87,
-      "densidade_g_cm3": 30,
-      "odor_conforme": 51,
+      "aspecto_score": 106,
+      "densidade_g_cm3": 26,
+      "odor_conforme": 47,
       "ph": 40
     }
   },
   "efeito_fornecedor": {
     "tabela": {
       "FOR-A": {
-        "n_lotes": 100,
-        "aprovacao_E1_pct": 86.0,
-        "sobrevivencia_90d_cumulativa_pct": 44.0
+        "n_lotes": 116,
+        "aprovacao_E1_pct": 86.2,
+        "sobrevivencia_90d_cumulativa_pct": 36.2
       },
       "FOR-B": {
-        "n_lotes": 94,
-        "aprovacao_E1_pct": 76.6,
-        "sobrevivencia_90d_cumulativa_pct": 29.8
+        "n_lotes": 87,
+        "aprovacao_E1_pct": 71.3,
+        "sobrevivencia_90d_cumulativa_pct": 32.2
       },
       "FOR-C": {
-        "n_lotes": 106,
-        "aprovacao_E1_pct": 84.0,
-        "sobrevivencia_90d_cumulativa_pct": 52.8
+        "n_lotes": 97,
+        "aprovacao_E1_pct": 81.4,
+        "sobrevivencia_90d_cumulativa_pct": 58.8
       }
     },
     "teste_E1": {
-      "chi2": 3.25,
-      "p_valor": 0.1974
+      "chi2": 7.14,
+      "p_valor": 0.0282
     },
     "teste_sobrevivencia_90d": {
-      "chi2": 10.92,
-      "p_valor": 0.0042
+      "chi2": 16.18,
+      "p_valor": 0.0003
     }
   },
   "funil_por_familia": [
     {
       "familia_sigla": "ALV",
-      "n_lotes": 49,
-      "aprovacao_E1_pct": 81.6,
-      "entraram_e3": 32,
-      "sobrevivencia_cumulativa_pct": 24.5,
-      "sobrevivencia_condicional_pct": 37.5,
-      "fotoestabilidade_nao_conforme_n": 2
-    },
-    {
-      "familia_sigla": "AMA",
-      "n_lotes": 50,
-      "aprovacao_E1_pct": 82.0,
-      "entraram_e3": 29,
-      "sobrevivencia_cumulativa_pct": 26.0,
-      "sobrevivencia_condicional_pct": 44.8,
-      "fotoestabilidade_nao_conforme_n": 1
+      "n_lotes": 45,
+      "aprovacao_E1_pct": 66.7,
+      "entraram_e3": 25,
+      "sobrevivencia_cumulativa_pct": 26.7,
+      "sobrevivencia_condicional_pct": 48.0,
+      "fotoestabilidade_nao_conforme_n": 5
     },
     {
       "familia_sigla": "LMU",
-      "n_lotes": 50,
-      "aprovacao_E1_pct": 88.0,
-      "entraram_e3": 38,
-      "sobrevivencia_cumulativa_pct": 44.0,
-      "sobrevivencia_condicional_pct": 57.9,
-      "fotoestabilidade_nao_conforme_n": 3
-    },
-    {
-      "familia_sigla": "DES",
-      "n_lotes": 53,
-      "aprovacao_E1_pct": 77.4,
-      "entraram_e3": 37,
-      "sobrevivencia_cumulativa_pct": 45.3,
-      "sobrevivencia_condicional_pct": 64.9,
-      "fotoestabilidade_nao_conforme_n": 6
-    },
-    {
-      "familia_sigla": "DLL",
-      "n_lotes": 44,
-      "aprovacao_E1_pct": 77.3,
-      "entraram_e3": 32,
-      "sobrevivencia_cumulativa_pct": 56.8,
-      "sobrevivencia_condicional_pct": 78.1,
+      "n_lotes": 49,
+      "aprovacao_E1_pct": 75.5,
+      "entraram_e3": 25,
+      "sobrevivencia_cumulativa_pct": 32.7,
+      "sobrevivencia_condicional_pct": 64.0,
       "fotoestabilidade_nao_conforme_n": 1
     },
     {
+      "familia_sigla": "AMA",
+      "n_lotes": 45,
+      "aprovacao_E1_pct": 80.0,
+      "entraram_e3": 33,
+      "sobrevivencia_cumulativa_pct": 33.3,
+      "sobrevivencia_condicional_pct": 45.5,
+      "fotoestabilidade_nao_conforme_n": 4
+    },
+    {
+      "familia_sigla": "DES",
+      "n_lotes": 51,
+      "aprovacao_E1_pct": 84.3,
+      "entraram_e3": 35,
+      "sobrevivencia_cumulativa_pct": 49.0,
+      "sobrevivencia_condicional_pct": 71.4,
+      "fotoestabilidade_nao_conforme_n": 2
+    },
+    {
+      "familia_sigla": "DLL",
+      "n_lotes": 57,
+      "aprovacao_E1_pct": 91.2,
+      "entraram_e3": 44,
+      "sobrevivencia_cumulativa_pct": 52.6,
+      "sobrevivencia_condicional_pct": 68.2,
+      "fotoestabilidade_nao_conforme_n": 4
+    },
+    {
       "familia_sigla": "DLR",
-      "n_lotes": 54,
-      "aprovacao_E1_pct": 87.0,
-      "entraram_e3": 41,
-      "sobrevivencia_cumulativa_pct": 59.3,
-      "sobrevivencia_condicional_pct": 78.0,
+      "n_lotes": 53,
+      "aprovacao_E1_pct": 81.1,
+      "entraram_e3": 37,
+      "sobrevivencia_cumulativa_pct": 54.7,
+      "sobrevivencia_condicional_pct": 78.4,
       "fotoestabilidade_nao_conforme_n": 2
     }
   ]

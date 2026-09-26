@@ -1,20 +1,20 @@
 """
-Gerador de dataset sintetico — controle de qualidade e estudo de estabilidade
+Gerador de dataset sintetico: controle de qualidade e estudo de estabilidade
 de saneantes (produtos de limpeza) formulados.
 
-Estrutura: funil de tres estagios com portoes de aprovacao, espelhando a pratica
+Estrutura: funil de tres estagios com criterios de decisao, espelhando a pratica
 de laboratorio de desenvolvimento:
 
-  Estagio 1 — Teste Inicial (dia 0)
+  Estagio 1: Teste Inicial (dia 0)
       organolepticas + pH + densidade + estufa 50 C 48 h + centrifugacao
-      3000 rpm/30 min + agitacao magnetica.  Portao: reprova em qualquer
-      ensaio encerra a formulacao.
+      3000 rpm/30 min + agitacao magnetica.  Criterio de decisao: reprova em
+      qualquer ensaio encerra a formulacao.
 
-  Estagio 2 — Estabilidade Preliminar (choque termico)
+  Estagio 2: Estabilidade Preliminar (choque termico)
       geladeira 5 C <-> estufa 40 C em dias alternados; avaliacoes em 15 e 30 d.
-      Portao no dia 30.
+      Decisao ao final do dia 30.
 
-  Estagio 3 — Estabilidade Acelerada
+  Estagio 3: Estabilidade Acelerada
       4 condicoes (ambiente escuro 25 C, estufa 40 C, geladeira 5 C, luz solar);
       avaliacoes em 7, 15, 30, 60 e 90 d.
 
@@ -30,10 +30,10 @@ Decisoes de modelagem (justificadas no relatorio tecnico):
     pH e densidade, e componente dependente de DOSE de radiacao atuando em
     b* (amarelecimento) e L* apenas na condicao de luz.  Estufa e luz sao
     mecanismos distintos, nao o mesmo ruido reescalado.
-  - Qualidade latente do lote (robustez da emulsao) governa simultaneamente os
+  - Qualidade oculta do lote (robustez da formulacao) governa simultaneamente os
     escores de estresse do Estagio 1 e as taxas de deriva do Estagio 3.  E isso
     que torna a previsao antecipada possivel sem vazamento: os ensaios de
-    bancada do dia 0 sao observacoes ruidosas da mesma variavel latente que
+    bancada do dia 0 sao observacoes ruidosas da mesma variavel oculta que
     determina o desfecho aos 90 dias.
   - Avaliacao organoleptica gerada em DUAS camadas: texto livre do analista
     (como a planilha real registra) e escore ordinal 0-4 derivado dele.
@@ -61,6 +61,17 @@ N_LOTES = 300
 OUT_DIR = Path(os.environ.get("OUT_DIR", "data"))
 
 rng = np.random.default_rng(SEED)
+# Gerador INDEPENDENTE para o sorteio de "defeito raro" em solucoes (ver
+# secao 2.1 do relatorio tecnico). Isolado do `rng` principal de proposito:
+# um sorteio extra inserido no meio da sequencia principal deslocaria todos
+# os sorteios posteriores (familia, fornecedor, robustez, datas...) para
+# lotes diferentes dos que teriam saido sem essa mudanca.
+rng_raro = np.random.default_rng(SEED + 1)
+# Gerador INDEPENDENTE para a escolha do TEXTO descritivo (qual frase da
+# lista sai). Isolado por principio, nao so por causa do bug acima: a
+# redacao de uma descricao e cosmetica e nunca deveria poder alterar um
+# resultado numerico so por mudar de tamanho de lista.
+rng_texto = np.random.default_rng(SEED + 2)
 
 # --------------------------------------------------------------------------
 # 1. Familias de produto, alvos e limites de especificacao
@@ -77,35 +88,35 @@ FAMILIAS = {
     # saneante de Risco 1 tem pH na forma pura > 2 e < 11,5 e nao possui atividade
     # antimicrobiana. Produto com acao desinfetante e Risco 2 (registro).
     "Detergente Liquido Lava-Loucas": dict(
-        sigla="DLL", anvisa="Risco 1", fonte_ph="[LIT] formulacoes de lava-loucas: pH 6,8 a 9,0",
+        sigla="DLL", tipo_fisico="solucao", anvisa="Risco 1", fonte_ph="[LIT] formulacoes de lava-loucas: pH 6,8 a 9,0",
         ph_alvo=7.60, ph_min=6.80, ph_max=8.60, ph_sd=0.20,
         dens_alvo=1.032, dens_min=1.020, dens_max=1.045, dens_sd=0.0048,
         lab_padrao=(88.0, -4.5, 28.0),
         k_ph=0.0008, k_dens=0.000014, k_cor=0.0060, foto=1.00,
         agitacao_aplicavel=True, excecao_centrifugacao=None),
     "Detergente Liquido para Roupas": dict(
-        sigla="DLR", anvisa="Risco 1", fonte_ph="[LIT] produtos de lavanderia: pH 9 a 11; formulacao-modelo de fornecedor: pH 10,5 e densidade 1,02",
+        sigla="DLR", tipo_fisico="solucao", anvisa="Risco 1", fonte_ph="[LIT] produtos de lavanderia: pH 9 a 11; formulacao-modelo de fornecedor: pH 10,5 e densidade 1,02",
         ph_alvo=9.60, ph_min=8.50, ph_max=10.50, ph_sd=0.24,
         dens_alvo=1.022, dens_min=1.010, dens_max=1.035, dens_sd=0.0045,
         lab_padrao=(82.0, 12.0, 6.0),
         k_ph=0.0009, k_dens=0.000012, k_cor=0.0065, foto=1.10,
         agitacao_aplicavel=True, excecao_centrifugacao=None),
     "Limpador Multiuso Alcalino": dict(
-        sigla="LMU", anvisa="Risco 1", fonte_ph="[LIT+EST] teto de 11,0 como margem do corte regulatorio de 11,5 (Risco 1)",
+        sigla="LMU", tipo_fisico="solucao", anvisa="Risco 1", fonte_ph="[LIT+EST] teto de 11,0 como margem do corte regulatorio de 11,5 (Risco 1)",
         ph_alvo=10.20, ph_min=9.50, ph_max=11.00, ph_sd=0.22,
         dens_alvo=1.010, dens_min=1.000, dens_max=1.025, dens_sd=0.0042,
         lab_padrao=(72.0, -22.0, 12.0),
         k_ph=0.0012, k_dens=0.000012, k_cor=0.0075, foto=1.25,
         agitacao_aplicavel=True, excecao_centrifugacao=None),
     "Desinfetante Quaternario Concentrado": dict(
-        sigla="DES", anvisa="Risco 2", fonte_ph="[EST] quaternario formulado proximo da neutralidade; Risco 2 por atividade antimicrobiana",
+        sigla="DES", tipo_fisico="solucao", anvisa="Risco 2", fonte_ph="[EST] quaternario formulado proximo da neutralidade; Risco 2 por atividade antimicrobiana",
         ph_alvo=7.00, ph_min=6.00, ph_max=8.00, ph_sd=0.20,
         dens_alvo=1.005, dens_min=0.995, dens_max=1.020, dens_sd=0.0040,
         lab_padrao=(65.0, -8.0, -28.0),
         k_ph=0.0007, k_dens=0.000010, k_cor=0.0055, foto=1.40,
         agitacao_aplicavel=False, excecao_centrifugacao=None),
     "Amaciante de Roupas (esterquat)": dict(
-        sigla="AMA", anvisa="Risco 1", fonte_ph="[LIT] esterquat exige pH 2,0 a 5,0, preferencialmente 2,5 a 4,0, para estabilidade hidrolitica do ester",
+        sigla="AMA", tipo_fisico="emulsao", anvisa="Risco 1", fonte_ph="[LIT] esterquat exige pH 2,0 a 5,0, preferencialmente 2,5 a 4,0, para estabilidade hidrolitica do ester",
         ph_alvo=3.20, ph_min=2.50, ph_max=4.00, ph_sd=0.20,
         dens_alvo=0.996, dens_min=0.985, dens_max=1.010, dens_sd=0.0042,
         lab_padrao=(90.0, 3.0, -6.0),
@@ -116,7 +127,7 @@ FAMILIAS = {
             "Sistema catonico: leve cremeacao reversivel a agitacao e esperada "
             "na centrifugacao; aceitar escore <= 3.")),
     "Alvejante Liquido sem Cloro": dict(
-        sigla="ALV", anvisa="Risco 1", fonte_ph="[EST] peroxido de hidrogenio se decompoe por catalise basica; alvejantes liquidos de oxigenio sao estabilizados em meio acido",
+        sigla="ALV", tipo_fisico="suspensao", anvisa="Risco 1", fonte_ph="[EST] peroxido de hidrogenio se decompoe por catalise basica; alvejantes liquidos de oxigenio sao estabilizados em meio acido",
         ph_alvo=4.20, ph_min=3.50, ph_max=5.00, ph_sd=0.18,
         dens_alvo=1.045, dens_min=1.030, dens_max=1.060, dens_sd=0.0048,
         lab_padrao=(94.0, -1.0, 4.0),
@@ -140,7 +151,7 @@ LIM_DELTA_E_LIB_V11 = 1.50        # dE00 de liberacao, v1.1: a partir de 2024-10
 DATA_REVISAO_SPEC = pd.Timestamp("2024-10-01")
 LIM_CENTRIFUGA_EXCECAO = 3        # familias com excecao declarada na spec
 LIM_DELTA_E_EST = 3.00   # dE00 de estabilidade (Tx vs T0 do proprio lote)
-LIM_DELTA_E_FOTO = 6.00  # dE00 sob luz solar — endpoint de fotoestabilidade
+LIM_DELTA_E_FOTO = 6.00  # dE00 sob luz solar; endpoint de fotoestabilidade
 
 CONDICOES = {
     # nome: (temperatura K, taxa de dose relativa de luz)
@@ -152,7 +163,7 @@ CONDICOES = {
 TEMPOS_E3 = [7, 15, 30, 60, 90]
 TEMPOS_E2 = [15, 30]
 
-EA = 80_000.0     # J/mol — faixa tipica de degradacao em formulados
+EA = 80_000.0     # J/mol; faixa tipica de degradacao em formulados
 R_GAS = 8.314
 T_REF = 298.15
 
@@ -228,41 +239,122 @@ def delta_e_2000(lab1, lab2) -> float:
 # --------------------------------------------------------------------------
 # 3. Vocabulario de laboratorio: escore ordinal -> texto livre do analista
 # --------------------------------------------------------------------------
+# Vocabulario descritivo por ensaio, condicionado ao TIPO FISICO da familia
+# (emulsao / suspensao / solucao). O fenomeno visivel em severidade alta e
+# fisicamente diferente por tipo: emulsao quebra (cremeacao/coalescencia),
+# suspensao sedimenta, solucao turva ou cristaliza. Aplicar vocabulario de
+# emulsao a uma solucao (ou vice-versa) descreveria um fenomeno que nao
+# existe naquele produto -- essa distincao foi adicionada apos revisao:
+# ver `relatorio/relatorio_tecnico.md` secao 2.1.
 TXT_ASPECTO = {
-    0: ["liquido homogeneo, limpido", "liquido homogeneo, levemente opalescente",
-        "liquido homogeneo, sem alteracao"],
-    1: ["liquido homogeneo com leve pelicula na superficie",
-        "homogeneo, leve turvacao em relacao ao padrao"],
-    2: ["cremeacao visivel na superficie, reversivel a agitacao",
-        "leve cremeacao na superficie, porem conforme"],
-    3: ["separacao parcial de fase, camada superior definida",
-        "sedimento no fundo nao reincorporavel"],
-    4: ["separacao franca de fases; coalescencia evidente",
-        "quebra de emulsao com sobrenadante limpido"],
+    "emulsao": {
+        0: ["liquido homogeneo, limpido", "liquido homogeneo, sem alteracao"],
+        1: ["liquido homogeneo com leve pelicula na superficie",
+            "homogeneo, leve turvacao em relacao ao padrao"],
+        2: ["cremeacao visivel na superficie, reversivel a agitacao",
+            "leve cremeacao na superficie, porem conforme"],
+        3: ["separacao parcial de fase, camada superior definida",
+            "cremeacao acentuada, redispersao parcial"],
+        4: ["separacao franca de fases; coalescencia evidente",
+            "quebra de emulsao com sobrenadante limpido"],
+    },
+    "suspensao": {
+        0: ["liquido homogeneo, limpido", "liquido homogeneo, sem alteracao"],
+        1: ["liquido homogeneo com leve turvacao em relacao ao padrao"],
+        2: ["sedimento fino visivel no fundo, redispersa com agitacao leve",
+            "traco de sedimento, porem conforme"],
+        3: ["sedimento parcial nao reincorporavel por agitacao leve"],
+        4: ["sedimento compacto no fundo; fase liquida sobrenadante limpida"],
+    },
+    "solucao": {
+        0: ["liquido homogeneo, limpido", "liquido homogeneo, levemente opalescente",
+            "liquido homogeneo, sem alteracao"],
+        1: ["liquido homogeneo com leve turvacao em relacao ao padrao"],
+        2: ["turvacao perceptivel em relacao ao padrao, porem conforme"],
+        3: ["cristais em suspensao, fora do padrao de limpidez"],
+        4: ["turvacao intensa ou particula estranha; produto inviavel"],
+    },
 }
 TXT_ESTUFA = {
-    0: ["sem alteracao apos 48 h a 50 C"],
-    1: ["leve pelicula na superficie apos 48 h, conforme"],
-    2: ["cremeacao na superficie de cor mais alaranjada, porem conforme",
-        "leve cremeacao na superficie, reversivel"],
-    3: ["separacao parcial apos 48 h a 50 C"],
-    4: ["separacao franca apos 48 h; produto inviavel"],
+    "emulsao": {
+        0: ["sem alteracao apos 48 h a 50 C"],
+        1: ["leve pelicula na superficie apos 48 h, conforme"],
+        2: ["cremeacao na superficie de cor mais alaranjada, porem conforme",
+            "leve cremeacao na superficie, reversivel"],
+        3: ["separacao parcial apos 48 h a 50 C"],
+        4: ["separacao franca apos 48 h; produto inviavel"],
+    },
+    "suspensao": {
+        0: ["sem alteracao apos 48 h a 50 C"],
+        1: ["leve sedimento apos 48 h, conforme"],
+        2: ["sedimento perceptivel apos 48 h a 50 C, dentro do padrao"],
+        3: ["sedimento compacto apos 48 h a 50 C"],
+        4: ["decomposicao evidente (liberacao de gas) apos 48 h; produto inviavel"],
+    },
+    "solucao": {
+        0: ["sem alteracao apos 48 h a 50 C"],
+        1: ["leve turvacao reversivel apos 48 h a 50 C"],
+        2: ["turvacao perceptivel apos 48 h, redissolve ao resfriar"],
+        3: ["turvacao nao reversivel apos 48 h a 50 C"],
+        4: ["precipitado irreversivel apos 48 h; produto inviavel"],
+    },
 }
 TXT_CENTRIFUGA = {
-    0: ["sem separacao apos 3000 rpm / 30 min"],
-    1: ["leve pelicula na superficie apos centrifugacao"],
-    2: ["precipitado fino no fundo apos centrifugacao",
-        "leve cremeacao reversivel apos centrifugacao"],
-    3: ["separacao parcial apos centrifugacao"],
-    4: ["separacao franca com sobrenadante limpido apos centrifugacao"],
+    "emulsao": {
+        0: ["sem separacao apos 3000 rpm / 30 min"],
+        1: ["leve pelicula na superficie apos centrifugacao"],
+        2: ["leve cremeacao reversivel apos centrifugacao"],
+        3: ["separacao parcial apos centrifugacao"],
+        4: ["separacao franca com sobrenadante limpido apos centrifugacao"],
+    },
+    "suspensao": {
+        0: ["sem sedimento apos 3000 rpm / 30 min"],
+        1: ["traco de sedimento fino, redispersa facilmente"],
+        2: ["precipitado fino no fundo apos centrifugacao"],
+        3: ["sedimento compacto, redispersao parcial"],
+        4: ["sedimento compacto nao redispersavel; sobrenadante limpido"],
+    },
+    "solucao": {
+        0: ["limpida, sem turbidez apos centrifugacao"],
+        1: ["traco de turbidez apos centrifugacao, dentro do padrao"],
+        2: ["turbidez perceptivel, possivel inicio de cristalizacao de tensoativo"],
+        3: ["cristais visiveis no fundo apos centrifugacao"],
+        4: ["cristalizacao evidente ou particula estranha; produto inviavel"],
+    },
 }
 TXT_AGITACAO = {
-    0: ["homogeneiza em menos de 2 min, sem alteracao"],
-    1: ["homogeneiza em cerca de 5 min"],
-    2: ["homogeneiza com dificuldade, aspecto final conforme"],
-    3: ["nao reincorpora totalmente apos 10 min"],
-    4: ["nao reincorpora; fases permanecem separadas"],
+    "emulsao": {
+        0: ["homogeneiza em menos de 2 min, sem alteracao"],
+        1: ["homogeneiza em cerca de 5 min"],
+        2: ["homogeneiza com dificuldade, aspecto final conforme"],
+        3: ["nao reincorpora totalmente apos 10 min"],
+        4: ["nao reincorpora; fases permanecem separadas"],
+    },
+    "suspensao": {
+        0: ["sedimento redispersa em menos de 2 min"],
+        1: ["redispersa em cerca de 5 min"],
+        2: ["redispersa com dificuldade"],
+        3: ["sedimento nao redispersa totalmente apos 10 min"],
+        4: ["sedimento compacto; nao redispersa"],
+    },
+    "solucao": {
+        0: ["sem alteracao, agitacao apenas de rotina"],
+        1: ["sem alteracao perceptivel apos agitacao"],
+        2: ["leve turvacao residual apos agitacao"],
+        3: ["particula nao dissolvida mesmo apos agitacao prolongada"],
+        4: ["cristal ou particula nao dissolvida; produto fora de especificacao"],
+    },
 }
+
+
+def texto_por_tipo(tabela_por_tipo, tipo_fisico, escore, gen):
+    """Sorteia o texto descritivo certo para o tipo fisico da familia.
+
+    `tabela_por_tipo` e um dos TXT_ASPECTO/TXT_ESTUFA/TXT_CENTRIFUGA/
+    TXT_AGITACAO acima, indexado primeiro por tipo_fisico e depois por
+    escore 0-4.
+    """
+    return str(gen.choice(tabela_por_tipo[tipo_fisico][int(escore)]))
 TXT_ODOR = {True: ["caracteristico", "caracteristico do produto"],
             False: ["alterado, notas rancosas", "caracteristico, porem alterado"]}
 TXT_COR = {
@@ -308,7 +400,7 @@ def escore_cor(de00):
 
 
 # --------------------------------------------------------------------------
-# 4. Estagio 1 — Teste Inicial
+# 4. Estagio 1: Teste Inicial
 # --------------------------------------------------------------------------
 nomes_familias = list(FAMILIAS)
 lotes = []
@@ -322,9 +414,9 @@ for i in range(N_LOTES):
     cfg = FAMILIAS[familia]
     fornecedor = str(rng.choice(list(FORNECEDORES)))
 
-    # Qualidade latente da emulsao: governa estresse no dia 0 E deriva aos 90 d
+    # Qualidade oculta da formulacao: governa estresse no dia 0 E deriva aos 90 d
     robustez = float(rng.normal(0.0, 1.0) + FORNECEDORES[fornecedor])
-    estresse = -robustez  # escores altos = pior emulsao
+    estresse = -robustez  # escores altos = pior formulacao
 
     ph0 = float(rng.normal(cfg["ph_alvo"], cfg["ph_sd"]) - 0.06 * robustez)
     dens0 = float(rng.normal(cfg["dens_alvo"], cfg["dens_sd"]) - 0.0018 * robustez)
@@ -335,10 +427,24 @@ for i in range(N_LOTES):
     db = float(rng.normal(0.0, 0.62) - 0.20 * robustez)
     de_lib = delta_e_2000((L0, a0, b0), (L0 + dL, a0 + da, b0 + db))
 
+    # Centrifugacao e agitacao sao ensaios de SEPARACAO DE FASE: so tem poder
+    # diagnostico onde existe fase dispersa para separar (emulsao, suspensao).
+    # Numa solucao verdadeira nao ha fase a separar, entao a sensibilidade ao
+    # estresse latente cai quase a zero e o defeito passa a vir de um
+    # mecanismo raro e INDEPENDENTE (materia-prima nao dissolvida,
+    # cristalizacao de tensoativo, contaminacao) -- nao da robustez da
+    # formulacao. Ver `relatorio/relatorio_tecnico.md` secao 2.1.
+    tipo_fisico = cfg["tipo_fisico"]
+    if tipo_fisico in ("emulsao", "suspensao"):
+        mult_centrifuga, mult_agitacao = 1.10, 0.85
+    else:  # solucao
+        mult_centrifuga, mult_agitacao = 0.12, 0.08
+    defeito_raro = 2.4 if (tipo_fisico == "solucao" and rng_raro.random() < 0.04) else 0.0
+
     s_aspecto = escore_ordinal(estresse * 0.75, rng)
     s_estufa = escore_ordinal(estresse, rng)
-    s_centrifuga = escore_ordinal(estresse * 1.10, rng)
-    s_agitacao = (escore_ordinal(estresse * 0.85, rng)
+    s_centrifuga = escore_ordinal(estresse * mult_centrifuga + defeito_raro, rng)
+    s_agitacao = (escore_ordinal(estresse * mult_agitacao + defeito_raro, rng)
                   if cfg["agitacao_aplicavel"] else np.nan)
     odor_ok = bool(rng.random() > 0.02 + 0.05 * max(0.0, estresse) / 3.0)
     s_cor = escore_cor(de_lib)
@@ -351,22 +457,22 @@ for i in range(N_LOTES):
         fornecedor_tensoativo=fornecedor,
         robustez_latente=round(robustez, 4),
         aspecto_score=s_aspecto,
-        aspecto_desc=escore_para_texto(TXT_ASPECTO, s_aspecto, rng),
+        aspecto_desc=texto_por_tipo(TXT_ASPECTO, tipo_fisico, s_aspecto, rng_texto),
         cor_L=round(L0 + dL, 2), cor_a=round(a0 + da, 2), cor_b=round(b0 + db, 2),
         delta_L=round(dL, 3), delta_a=round(da, 3), delta_b=round(db, 3),
         delta_e_liberacao=round(de_lib, 3),
         cor_score=s_cor,
-        cor_desc=escore_para_texto(TXT_COR, s_cor, rng),
+        cor_desc=escore_para_texto(TXT_COR, s_cor, rng_texto),
         odor_conforme=odor_ok,
-        odor_desc=escore_para_texto(TXT_ODOR, odor_ok, rng),
+        odor_desc=escore_para_texto(TXT_ODOR, odor_ok, rng_texto),
         ph=round(ph0, 2),
         densidade_g_cm3=round(dens0, 3),
         estufa50_score=s_estufa,
-        estufa50_desc=escore_para_texto(TXT_ESTUFA, s_estufa, rng),
+        estufa50_desc=texto_por_tipo(TXT_ESTUFA, tipo_fisico, s_estufa, rng_texto),
         centrifugacao_score=s_centrifuga,
-        centrifugacao_desc=escore_para_texto(TXT_CENTRIFUGA, s_centrifuga, rng),
+        centrifugacao_desc=texto_por_tipo(TXT_CENTRIFUGA, tipo_fisico, s_centrifuga, rng_texto),
         agitacao_score=s_agitacao,
-        agitacao_desc=(escore_para_texto(TXT_AGITACAO, s_agitacao, rng)
+        agitacao_desc=(texto_por_tipo(TXT_AGITACAO, tipo_fisico, s_agitacao, rng_texto)
                        if cfg["agitacao_aplicavel"] else "-"),
         analista=str(rng.choice(["ANL-01", "ANL-02", "ANL-03"])),
         instrumento_ph=str(rng.choice(["PH-01", "PH-02"])),
@@ -472,7 +578,7 @@ for familia, cfg in FAMILIAS.items():
 spec_master = pd.DataFrame(spec_rows)
 
 # --------------------------------------------------------------------------
-# 7. Portao do Estagio 1 — regra AND explicita sobre a spec vigente
+# 7. Criterio de decisao do Estagio 1: regra AND explicita sobre a spec vigente
 # --------------------------------------------------------------------------
 def avaliar_estagio1(row) -> tuple[str, str]:
     cfg = FAMILIAS[row.produto_familia]
@@ -493,7 +599,7 @@ def avaliar_estagio1(row) -> tuple[str, str]:
         causas.append("falha em estufa 50C")
     # Excecao por familia: onde a spec declara excecao (precipitado fino do
     # estabilizante no alvejante, cremeacao reversivel no amaciante catonico), o
-    # escore 3 e aceito — o fenomeno decorre da quimica do sistema e nao indica
+    # escore 3 e aceito: o fenomeno decorre da quimica do sistema e nao indica
     # instabilidade. Sem excecao declarada, 3 reprova.
     lim_centrifuga = (LIM_CENTRIFUGA_EXCECAO if cfg["excecao_centrifugacao"]
                       else LIM_ESTRESSE)
@@ -531,7 +637,7 @@ for idx in rng.choice(e1.index, size=int(0.25 * len(e1)), replace=False):
 df_dupla = pd.DataFrame(dupla)
 
 # --------------------------------------------------------------------------
-# 9. Estagios 2 e 3 — deriva por mecanismo
+# 9. Estagios 2 e 3: deriva por mecanismo
 # --------------------------------------------------------------------------
 aprov1 = e1[e1.status_estagio1 == "Aprovado"].copy()
 
@@ -560,10 +666,10 @@ for row in aprov1.itertuples():
             densidade_g_cm3=round(dens + rng.normal(0, 0.0015), 3),
             delta_e_estabilidade=round(de, 3),
             aspecto_score=s_asp,
-            aspecto_desc=escore_para_texto(TXT_ASPECTO, s_asp, rng),
-            cor_score=s_cor, cor_desc=escore_para_texto(TXT_COR, s_cor, rng),
+            aspecto_desc=texto_por_tipo(TXT_ASPECTO, cfg["tipo_fisico"], s_asp, rng_texto),
+            cor_score=s_cor, cor_desc=escore_para_texto(TXT_COR, s_cor, rng_texto),
             odor_conforme=odor_ok,
-            odor_desc=escore_para_texto(TXT_ODOR, odor_ok, rng),
+            odor_desc=escore_para_texto(TXT_ODOR, odor_ok, rng_texto),
         ))
 e2 = pd.DataFrame(linhas_e2)
 
@@ -593,7 +699,7 @@ def oos_estabilidade(row) -> str:
 e2["causa_oos"] = e2.apply(oos_estabilidade, axis=1)
 e2["oos_flag"] = e2.causa_oos != ""
 
-# Portao do estagio 2: reprova se houver OOS em qualquer avaliacao (15 ou 30 d)
+# Criterio de decisao do estagio 2: reprova se houver OOS em qualquer avaliacao (15 ou 30 d)
 falhou_e2 = e2.groupby("lote").oos_flag.any()
 aprov1["status_estagio2"] = aprov1.lote.map(
     lambda l: "Reprovado" if falhou_e2.get(l, False) else "Aprovado")
@@ -640,10 +746,10 @@ for row in aprov2.itertuples():
                 delta_L=round(dL_t, 3), delta_a=0.0, delta_b=round(db_t, 3),
                 delta_e_estabilidade=round(de, 3),
                 aspecto_score=s_asp,
-                aspecto_desc=escore_para_texto(TXT_ASPECTO, s_asp, rng),
-                cor_score=s_cor, cor_desc=escore_para_texto(TXT_COR, s_cor, rng),
+                aspecto_desc=texto_por_tipo(TXT_ASPECTO, cfg["tipo_fisico"], s_asp, rng_texto),
+                cor_score=s_cor, cor_desc=escore_para_texto(TXT_COR, s_cor, rng_texto),
                 odor_conforme=odor_ok,
-                odor_desc=escore_para_texto(TXT_ODOR, odor_ok, rng),
+                odor_desc=escore_para_texto(TXT_ODOR, odor_ok, rng_texto),
             ))
 e3 = pd.DataFrame(linhas_e3)
 e3["causa_oos"] = e3.apply(oos_estabilidade, axis=1)

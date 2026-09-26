@@ -1,40 +1,40 @@
 {
-  "n_medicoes": 30691,
+  "n_medicoes": 29421,
   "n_lotes": 300,
-  "medicoes_sem_criterio_na_spec": 4974,
+  "medicoes_sem_criterio_na_spec": 4762,
   "versoes_de_spec_aplicadas": {
     "delta_e_liberacao": 2
   },
   "medicoes_fisicamente_impossiveis": 8,
   "lotes_com_medicao_impossivel": 8,
-  "disposicao_E1_reproduzida": 293,
-  "disposicao_E1_divergente": 7,
-  "divergencias_explicadas_por_medicao_invalida": 7,
-  "lotes_com_disposicao_alterada_se_ignorar_vigencia": 4,
+  "disposicao_E1_reproduzida": 292,
+  "disposicao_E1_divergente": 8,
+  "divergencias_explicadas_por_medicao_invalida": 8,
+  "lotes_com_disposicao_alterada_se_ignorar_vigencia": 5,
   "lotes_aceitos_por_excecao": 6,
   "desempenho_detectores": {
     "z-score modificado (MAD)": {
-      "verdadeiros_positivos": 12,
+      "verdadeiros_positivos": 10,
       "falsos_positivos": 0,
-      "falsos_negativos": 25,
-      "recall": 0.324,
+      "falsos_negativos": 27,
+      "recall": 0.27,
       "precisao": 1.0,
       "recall_por_tipo_de_erro": {
         "decimal_deslocado": 1.0,
-        "replicata_trocada": 0.6,
-        "sonda_descalibrada": 0.042
+        "replicata_trocada": 0.4,
+        "sonda_descalibrada": 0.0
       }
     },
     "IQR de Tukey": {
-      "verdadeiros_positivos": 14,
-      "falsos_positivos": 4,
-      "falsos_negativos": 23,
-      "recall": 0.378,
-      "precisao": 0.778,
+      "verdadeiros_positivos": 10,
+      "falsos_positivos": 7,
+      "falsos_negativos": 27,
+      "recall": 0.27,
+      "precisao": 0.588,
       "recall_por_tipo_de_erro": {
         "decimal_deslocado": 1.0,
-        "replicata_trocada": 0.6,
-        "sonda_descalibrada": 0.125
+        "replicata_trocada": 0.4,
+        "sonda_descalibrada": 0.0
       }
     },
     "faixa fisica": {
@@ -55,43 +55,39 @@
     "decimal_deslocado": 8,
     "replicata_trocada": 5
   },
-  "oot_candidatos_a_revisao": 32,
-  "oot_medicoes_avaliadas": 12647,
-  "oot_taxa_de_sinalizacao": 0.0023,
-  "oot_lotes_com_pelo_menos_um_candidato": 14,
+  "oot_candidatos_a_revisao": 19,
+  "oot_medicoes_avaliadas": 12082,
+  "oot_taxa_de_sinalizacao": 0.0014,
+  "oot_lotes_com_pelo_menos_um_candidato": 12,
   "vies_instrumento": {
-    "meses_testados": 18,
-    "limiar_bonferroni_mensal": 0.00278,
-    "meses_sinalizados_teste_mensal": [
-      "2024-09"
-    ],
-    "offset_estimado_teste_mensal": 0.55,
+    "meses_testados": 17,
+    "limiar_bonferroni_mensal": 0.00294,
+    "meses_sinalizados_teste_mensal": [],
+    "offset_estimado_teste_mensal": null,
     "janelas_de_3_meses_testadas": 16,
     "janelas_sinalizadas": [
-      "2024-07 a 2024-09",
-      "2024-08 a 2024-10",
       "2024-09 a 2024-11"
     ],
     "span_recuperado": [
-      "2024-07",
+      "2024-09",
       "2024-11"
     ],
-    "offset_estimado_no_span": 0.305
+    "offset_estimado_no_span": 0.26
   },
   "kappa_quadratico": {
-    "aspecto_score": 0.876,
-    "centrifugacao_score": 0.928,
-    "estufa50_score": 0.91
+    "aspecto_score": 0.852,
+    "centrifugacao_score": 0.84,
+    "estufa50_score": 0.921
   },
   "n_reavaliacoes": 225,
-  "taxa_de_discordancia": 0.173,
-  "lotes_com_erro_injetado": 35,
+  "taxa_de_discordancia": 0.222,
+  "lotes_com_erro_injetado": 37,
   "reprovados_indevidamente": 10,
   "aprovados_indevidamente": 0,
   "features": {
     "n_colunas": 44,
     "n_lotes": 300,
-    "n_lotes_no_estagio3": 209,
-    "taxa_sobrevivencia_entre_os_que_chegaram": 0.612
+    "n_lotes_no_estagio3": 199,
+    "taxa_sobrevivencia_entre_os_que_chegaram": 0.638
   }
 }

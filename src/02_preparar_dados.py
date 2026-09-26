@@ -1,5 +1,5 @@
 """
-02_preparar_dados.py — preparacao e qualidade do dado
+02_preparar_dados.py: preparacao e qualidade do dado
 =====================================================
 
 Transforma os sete arquivos de `data/` em duas saidas consumiveis pelos scripts
@@ -86,12 +86,12 @@ resumo: dict = {}
 # 1. Carga, com validacao de schema no limite de ingestao
 # =========================================================================
 # O schema valida ESTRUTURA (coluna existe, tipo certo, categoria pertence ao
-# conjunto esperado) — nunca a PLAUSIBILIDADE FISICA do valor medido. As
+# conjunto esperado); nunca a PLAUSIBILIDADE FISICA do valor medido. As
 # medicoes fisicamente impossiveis (pH 48,70) sao intencionais: sao os erros de
 # laboratorio injetados que a Secao 5 existe para detectar. Se o schema as
 # rejeitasse aqui, o script falharia exatamente no dado que ele foi escrito
 # para diagnosticar. A fronteira e clara: schema pega CSV malformado (coluna
-# ausente, tipo errado, categoria desconhecida — ex.: um LIMS que exportou
+# ausente, tipo errado, categoria desconhecida, ex.: um LIMS que exportou
 # "Aprovada" em vez de "Aprovado"); a logica de negocio das secoes 5 a 10 pega
 # medicao ruim. Confundir as duas transformaria o diagnostico de qualidade do
 # DADO em erro de qualidade do SCRIPT.
@@ -172,7 +172,7 @@ def carregar_validado(caminho: pathlib.Path, esquema: pa.DataFrameSchema,
                       **kwargs_leitura) -> pd.DataFrame:
     """Le um CSV e valida contra o schema, reportando TODAS as violacoes de
     uma vez (lazy=True) em vez de parar na primeira. Falha antes de qualquer
-    calculo — o objetivo e nunca propagar um NaN silencioso ate um resultado
+    calculo: o objetivo e nunca propagar um NaN silencioso ate um resultado
     tres secoes depois."""
     df = pd.read_csv(caminho, **kwargs_leitura)
     try:
@@ -180,7 +180,7 @@ def carregar_validado(caminho: pathlib.Path, esquema: pa.DataFrameSchema,
     except pa.errors.SchemaErrors as erro:
         resumo = erro.failure_cases[["column", "check", "failure_case"]].head(10)
         raise SystemExit(
-            f"\nSCHEMA INVALIDO em {caminho.name} — corrigir a origem do dado, "
+            f"\nSCHEMA INVALIDO em {caminho.name}: corrigir a origem do dado, "
             f"nao ajustar o schema para aceitar:\n{resumo.to_string(index=False)}\n"
             f"({len(erro.failure_cases)} violacoes no total)"
         ) from erro
@@ -289,7 +289,7 @@ sem_criterio = juncao.versao_spec.isna()
 m = juncao[na_vigencia | sem_criterio].reset_index(drop=True)
 
 # Se a spec tiver janelas sobrepostas, uma medicao casaria com duas linhas e
-# passariamos a julgar o mesmo resultado duas vezes. A assercao protege disso.
+# o mesmo resultado seria julgado duas vezes. A assercao protege disso.
 assert len(m) == len(longo), (
     f"juncao por vigencia gerou {len(m)} linhas para {len(longo)} medicoes: "
     "ha janelas de vigencia sobrepostas ou lacunas na spec_master")
@@ -329,7 +329,7 @@ m["motivo"] = np.select(
      "atributo nao conforme"],
     default="")
 
-# --- 6a. A regra reconstruida reproduz o portao do dataset? -----------------
+# --- 6a. A regra reconstruida reproduz a disposicao do dataset? -----------------
 # Teste de sanidade do pipeline: aplicando a spec_master as medicoes do Estagio
 # 1, a disposicao calculada deve coincidir com `status_estagio1`. Divergencia
 # esperada apenas nos lotes com medicao impossivel, que a regra correta invalida
@@ -422,8 +422,8 @@ resumo["erros_injetados_por_tipo"] = gabarito.tipo_erro.value_counts().to_dict()
 #
 # (1) Aplicar um filtro de ponto atipico (Hampel, z-score) DIRETO sobre uma
 #     serie de estabilidade nao funciona: a serie deriva por construcao, e o
-#     filtro sinaliza as pontas da tendencia — que sao o comportamento
-#     esperado. Numa versao anterior deste script isso gerou 220 sinalizacoes
+#     filtro sinaliza as pontas da tendencia, que sao o comportamento
+#     esperado. Aplicado a esta serie, esse metodo gera 220 sinalizacoes
 #     espurias.
 #
 # (2) Remover a tendencia e filtrar o residuo tambem nao resolve AQUI: cada
@@ -433,7 +433,7 @@ resumo["erros_injetados_por_tipo"] = gabarito.tipo_erro.value_counts().to_dict()
 #
 # O que funciona com series curtas e comparar ENTRE LOTES no MESMO ponto de
 # tempo: a referencia passa a ser a distribuicao dos outros lotes da mesma
-# familia, na mesma condicao, no mesmo dia de avaliacao — onde ha dezenas de
+# familia, na mesma condicao, no mesmo dia de avaliacao, onde ha dezenas de
 # observacoes em vez de cinco. E a abordagem de intervalo de tolerancia por
 # ponto de tempo, usada para deteccao de fora de tendencia (OOT) em estudos de
 # estabilidade.
@@ -491,9 +491,9 @@ suspeitos = por_mes[por_mes.significativo]
 # --- 8a. Varredura em janela de tres meses --------------------------------
 # O teste mes a mes tem pouca potencia: sao cerca de 8 lotes por instrumento por
 # mes. Agrupar tres meses consecutivos aumenta a potencia ao custo de resolucao
-# temporal — o metodo passa a localizar o periodo com precisao de trimestre, nao
-# de mes. Reportar os dois e o honesto: o mensal tem alta especificidade, o
-# trimestral tem alta sensibilidade, e a verdade esta entre os dois.
+# temporal: o metodo passa a localizar o periodo com precisao de trimestre, nao
+# de mes. Reportar os dois preserva essa diferenca de resolucao: o mensal tem alta
+# especificidade, o trimestral tem alta sensibilidade.
 meses = por_mes.mes.tolist()
 linhas_janela = []
 for i in range(len(meses) - 2):

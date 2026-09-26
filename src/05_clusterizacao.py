@@ -1,24 +1,24 @@
 """
-05_clusterizacao.py — agrupamento por assinatura de degradacao
+05_clusterizacao.py: agrupamento por assinatura de degradacao
 ====================================================================================
 
-Pergunta de negocio (ICH Q1D — bracketing e matrixing): produtos que degradam
+Pergunta de negocio (ICH Q1D, bracketing e matrixing): produtos que degradam
 DA MESMA FORMA podem compartilhar protocolo de estabilidade, independente do
 nome comercial da familia. Este script descobre esses grupos sem usar o rotulo
-de familia — e depois testa se o agrupamento encontrado coincide com a familia
+de familia, e depois testa se o agrupamento encontrado coincide com a familia
 declarada ou corta por ela, o que e o resultado interessante em qualquer um
 dos dois casos.
 
 Metodo:
-  1. Para cada lote que chegou ao Estagio 3 (209), ajustar a INCLINACAO
+  1. Para cada lote que chegou ao Estagio 3 (199), ajustar a INCLINACAO
      (regressao linear simples no tempo) de pH, delta_b* (amarelecimento) e
      delta_L* (escurecimento) em cada uma das 4 condicoes de armazenamento.
-     Isso da um vetor de 12 numeros por lote — a "assinatura" de como ele
-     degrada — independente do nivel inicial (so a FORMA da deriva).
+     Isso da um vetor de 12 numeros por lote: a "assinatura" de como ele
+     degrada, independente do nivel inicial (so a inclinacao da deriva).
   2. Padronizar (z-score) e agrupar com K-means; o numero de grupos e
      escolhido pelo pico da silhueta media, testando k=2..8.
   3. Comparar contra a hierarquica (Ward) sobre o mesmo vetor, como checagem
-     de robustez — dois metodos diferentes devem concordar em estrutura, nao
+     de robustez: dois metodos diferentes devem concordar em estrutura, nao
      necessariamente em rotulo.
   4. Medir concordancia com a familia DECLARADA via Adjusted Rand Index (ARI):
      ARI alto = os grupos descobertos sao so as familias; ARI baixo = o
@@ -163,6 +163,7 @@ axa.plot(ks, [silhuetas[k] for k in ks], marker="o", color="#2E6B8A", lw=1.6)
 axa.scatter([k_escolhido], [silhuetas[k_escolhido]], color="#C4531A", s=60, zorder=3)
 axa.annotate(f"k={k_escolhido} escolhido", (k_escolhido, silhuetas[k_escolhido]),
             xytext=(8, -14), textcoords="offset points", fontsize=6.8, color="#C4531A")
+axa.set_ylim(0, max(silhuetas.values()) * 1.3)  # folga no topo: evita que o tick mais alto encoste na letra do painel
 axa.set_xlabel("Número de clusters (k)"); axa.set_ylabel("Silhueta média")
 axa.set_title("k escolhido pelo pico da silhueta", loc="left")
 panel_letter(axa, "a")
@@ -199,7 +200,7 @@ cbar.set_label("z-score do centroide", fontsize=6.5)
 axc.set_title("Assinatura de cada cluster (padronizada)", loc="left")
 panel_letter(axc, "c")
 
-# (d) cluster x familia declarada — mostra se corta a familia ou nao
+# (d) cluster x familia declarada: mostra se corta a familia ou nao
 tab_pct = tab_familia.div(tab_familia.sum(axis=1), axis=0) * 100
 esq = np.zeros(k_escolhido)
 cores_fam = plt.cm.tab10(np.linspace(0, 1, tab_familia.shape[1]))
@@ -224,7 +225,7 @@ textos = [(t, t.get_window_extent(r)) for t in fig.findobj(matplotlib.text.Text)
 sobrepostos = [(a.get_text()[:20], b.get_text()[:20]) for i, (a, ba) in enumerate(textos)
               for b, bb in textos[i+1:] if ba.overlaps(bb)]
 if sobrepostos:
-    print("ATENCAO — textos sobrepostos:", sobrepostos)
+    print("ATENCAO: textos sobrepostos:", sobrepostos)
 plt.close(fig)
 
 # =========================================================================

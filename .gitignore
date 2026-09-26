@@ -7,3 +7,6 @@ venv/
 Thumbs.db
 .vscode/
 .idea/
+
+# material de trabalho, nao faz parte do repositorio publicado
+CHECKLIST_PUBLICACAO.md

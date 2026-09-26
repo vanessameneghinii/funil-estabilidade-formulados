@@ -1,22 +1,21 @@
 """
-03_analise_funil.py — atrito, causas e efeito de fornecedor no funil de 3 estagios
+03_analise_funil.py: atrito, causas e efeito de fornecedor no funil de 3 estagios
 ====================================================================================
 
 Consome `funil_lotes.csv`, `estagio1_teste_inicial.csv` e `dados_longo.csv`
 (saidas do 01 e do 02) e responde tres perguntas de negocio:
 
   1. Onde o funil perde formulacao, e por qual ensaio?
-  2. O fornecedor de tensoativo afeta o resultado — e em qual estagio isso
+  2. O fornecedor de tensoativo afeta o resultado, e em qual estagio isso
      aparece pela primeira vez?
   3. Qual familia tem a maior distancia entre "passa a triagem" e "sobrevive
      aos 90 dias", e o que isso diz sobre o mecanismo de falha dela?
 
-Duas taxas de sobrevivencia sao reportadas SEPARADAMENTE, nunca misturadas
-(ver a conversa que motivou este script):
+Duas taxas de sobrevivencia sao reportadas SEPARADAMENTE, nunca misturadas:
   - CUMULATIVA  = aprovados aos 90 d / total que ENTROU no funil
                   ("de cada 100 formulacoes que comeco, quantas terminam?")
   - CONDICIONAL = aprovados aos 90 d / total que CHEGOU ao Estagio 3
-                  ("dado que passou os 2 portoes, qual a chance de sobreviver?")
+                  ("dado que passou os 2 primeiros criterios de decisao, qual a chance de sobreviver?")
 
 Saidas:
   output/funil_por_familia.csv
@@ -49,7 +48,7 @@ resumo: dict = {}
 # 1. Carga
 # =========================================================================
 # Estes tres arquivos ja passaram pela validacao de schema do 02 (funil_lotes e
-# dados_longo sao saida do proprio pipeline) — carga simples, sem revalidar.
+# dados_longo sao saida do proprio pipeline); carga simples, sem revalidar.
 fun = pd.read_csv(DATA_DIR / "funil_lotes.csv")
 e1 = pd.read_csv(DATA_DIR / "estagio1_teste_inicial.csv", parse_dates=["data_inicio_teste"])
 dl = pd.read_csv(DATA_DIR / "dados_longo.csv")
@@ -91,7 +90,7 @@ causas.to_csv(OUT_DIR / "funil_causas_por_estagio.csv", index=False, encoding="u
 # =========================================================================
 # 4. Efeito do fornecedor de tensoativo
 # =========================================================================
-# Teste em CADA portao, separadamente — a pergunta e EM QUE ESTAGIO o efeito
+# Teste em CADA estagio, separadamente: a pergunta e EM QUE ESTAGIO o efeito
 # aparece pela primeira vez, nao apenas "existe algum efeito".
 tab_e1 = pd.crosstab(e1.fornecedor_tensoativo, e1.status_estagio1)
 chi2_e1, p_e1, *_ = chi2_contingency(tab_e1)
@@ -112,11 +111,11 @@ resumo["efeito_fornecedor"] = dict(
     tabela=por_fornecedor.to_dict(orient="index"),
     teste_E1=dict(chi2=round(float(chi2_e1), 2), p_valor=round(float(p_e1), 4)),
     teste_sobrevivencia_90d=dict(chi2=round(float(chi2_90), 2), p_valor=round(float(p_90), 4)),
-    # Nota de honestidade: o gerador (01_gerar_dataset.py) atribui a cada lote
-    # uma qualidade latente que carrega um vies por fornecedor, e essa variavel
+    # Ressalva de metodo: o gerador (01_gerar_dataset.py) atribui a cada lote
+    # uma qualidade oculta que carrega um vies por fornecedor, e essa variavel
     # NAO e exposta como feature (ela seria vazamento). O teste abaixo mede o
-    # efeito OBSERVADO nos dados disponiveis — nao usa nem tem acesso ao valor
-    # latente. A interpretacao de mecanismo (paragrafo no README) e baseada no
+    # efeito OBSERVADO nos dados disponiveis; nao usa nem tem acesso ao valor
+    # oculto. A interpretacao de mecanismo (paragrafo no README) e baseada no
     # desenho do gerador, nao extraida deste teste.
 )
 
@@ -207,8 +206,9 @@ axc.bar(x + w/2, por_fornecedor.sobrevivencia_90d_cumulativa_pct, width=w,
        color="#2E6B8A", label="Sobrevivência aos 90 dias")
 axc.set_xticks(x); axc.set_xticklabels(por_fornecedor.index)
 axc.set_ylabel("% dos lotes"); axc.set_ylim(0, 100)
-p_txt = "p < 0,01" if p_90 < 0.01 else f"p = {p_90:.3f}"
-axc.set_title(f"Fornecedor não separa no dia 0 (p={p_e1:.2f}),\nmas separa aos 90 d ({p_txt})",
+p_txt_90 = "p < 0,001" if p_90 < 0.001 else f"p = {p_90:.3f}"
+p_txt_e1 = "sem separar" if p_e1 >= 0.05 else "já separa fracamente"
+axc.set_title(f"Fornecedor {p_txt_e1} no dia 0 (p = {p_e1:.3f}),\nmais forte aos 90 d ({p_txt_90})",
              loc="left")
 axc.legend(frameon=False, loc="upper right", fontsize=6.3)
 panel_letter(axc, "c")
@@ -225,7 +225,7 @@ axd.scatter(por_familia.sobrevivencia_condicional_pct, yf, color="#C4531A", s=32
 axd.set_yticks(yf); axd.set_yticklabels(familias_ord)
 axd.set_xlabel("% sobrevivência aos 90 dias"); axd.set_xlim(0, 128)
 axd.set_xticks([0, 20, 40, 60, 80, 100])
-axd.set_title("A distância entre as duas é o custo dos 2 primeiros portões", loc="left")
+axd.set_title("A distância entre as duas é o custo dos 2 primeiros critérios de decisão", loc="left")
 axd.legend(frameon=False, loc="center right", bbox_to_anchor=(1.02, 0.5), fontsize=6.3)
 panel_letter(axd, "d")
 
@@ -238,7 +238,7 @@ textos = [(t, t.get_window_extent(r)) for t in fig.findobj(matplotlib.text.Text)
 sobrepostos = [(a.get_text()[:20], b.get_text()[:20]) for i, (a, ba) in enumerate(textos)
               for b, bb in textos[i+1:] if ba.overlaps(bb)]
 if sobrepostos:
-    print("ATENCAO — textos sobrepostos:", sobrepostos)
+    print("ATENCAO: textos sobrepostos:", sobrepostos)
 plt.close(fig)
 
 # =========================================================================

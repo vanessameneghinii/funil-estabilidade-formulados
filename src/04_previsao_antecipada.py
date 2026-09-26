@@ -1,5 +1,5 @@
 """
-04_previsao_antecipada.py — previsao antecipada de falha em estabilidade acelerada
+04_previsao_antecipada.py: previsao antecipada de falha em estabilidade acelerada
 ====================================================================================
 
 Pergunta de negocio: cada formulacao que entra na Estabilidade Acelerada ocupa
@@ -7,19 +7,19 @@ camara climatica, bancada e analista por 90 dias. Quanto antes eu souber que ela
 vai falhar, menos tempo de camara eu desperdico. Este script mede o quanto se
 ganha esperando mais informacao, comparando 3 HORIZONTES de decisao:
 
-  H0  dia 0   — so o Teste Inicial (features `d0_*`)
-  H1  ~30 d   — H0 + Estabilidade Preliminar (features `e2_*`)
-  H2  ~37 d   — H1 + primeira leitura da Acelerada, dia 7 (features `d7_*`)
+  H0  dia 0   : so o Teste Inicial (features `d0_*`)
+  H1  ~30 d   : H0 + Estabilidade Preliminar (features `e2_*`)
+  H2  ~37 d   : H1 + primeira leitura da Acelerada, dia 7 (features `d7_*`)
 
 Alvo: `falha_90d` = lote reprovado em algum ponto da Estabilidade Acelerada
-(1 = falha). Restrito aos 209 lotes que CHEGARAM ao Estagio 3 — prever o
+(1 = falha). Restrito aos 199 lotes que CHEGARAM ao Estagio 3: prever o
 desfecho de quem nunca entrou no estudo nao e a pergunta, e o proprio funil ja
 decidiu isso no Passo 3.
 
 Duas coisas sao medidas e reportadas juntas, nunca uma sem a outra:
-  - Divisao TEMPORAL (treina no passado, testa no futuro) — a divisao correta
+  - Divisao TEMPORAL (treina no passado, testa no futuro): a divisao correta
     para uma decisao que sera usada em lotes futuros.
-  - Divisao ALEATORIA (mesma proporcao, embaralhada) — reproduzida de proposito
+  - Divisao ALEATORIA (mesma proporcao, embaralhada), reproduzida de proposito
     para servir de comparacao. Se a AUC aleatoria for muito maior que a
     temporal, isso e sinal de deriva de distribuicao (a revisao de spec de
     2024-10-01 e a candidata mais provavel), nao de bug.
@@ -68,7 +68,7 @@ FRACAO_TESTE = 0.22
 # Custo de deixar passar uma falha (o lote segue para investigacao/reformulacao
 # so depois de ocupar a camara por 90 dias) contra custo de investigar uma
 # formulacao boa por engano (revisao extra de bancada, ~1 dia). E uma escolha
-# de negocio, nao estatistica — documentada aqui para poder ser discutida e
+# de negocio, nao estatistica; documentada aqui para poder ser discutida e
 # trocada, nao para ser tratada como verdade objetiva.
 CUSTO_FALSO_NEGATIVO = 4.0
 CUSTO_FALSO_POSITIVO = 1.0
@@ -91,11 +91,10 @@ resumo["populacao"] = dict(
 # =========================================================================
 # 2. Conjuntos de features por horizonte
 # =========================================================================
-# `analista` e `instrumento_ph` sao DELIBERADAMENTE excluidos das features.
-# Sao identidade de quem mediu, nao propriedade do produto — inclui-los
-# arriscaria o modelo aprender "PH-02 entre set-nov/2024 = risco", que e o
-# vies de instrumento do Passo 2 disfarcado de sinal preditivo, nao a quimica
-# da formulacao.
+# `analista` e `instrumento_ph` sao DELIBERADAMENTE excluidos das features:
+# inclui-los arriscaria o modelo aprender "PH-02 entre set-nov/2024 = risco",
+# o vies de instrumento do Passo 2 disfarcado de sinal preditivo, em vez da
+# quimica real da formulacao.
 CATEGORICAS = ["produto_familia", "fornecedor_tensoativo"]
 COLS_D0 = [c for c in base.columns if c.startswith("d0_")]
 COLS_E2 = [c for c in base.columns if c.startswith("e2_")]
@@ -212,8 +211,8 @@ resultados = pd.DataFrame(resultados)
 resumo["resultados"] = resultados.to_dict(orient="records")
 
 # =========================================================================
-# 5. Importancia por permutacao (H0, RF, divisao temporal — o modelo que
-#    realmente seria usado: decisao no dia 0, validada no futuro)
+# 5. Importancia por permutacao (H0, RF, divisao temporal: o modelo que
+#    realmente seria usado, decisao no dia 0, validada no futuro)
 # =========================================================================
 alvo_h0 = modelos_treinados["H0_dia0"]
 imp = permutation_importance(alvo_h0["pipe"], alvo_h0["X_te"], alvo_h0["y_te"],
@@ -259,7 +258,7 @@ axa.set_title("Dia 0 já captura quase todo o sinal (temporal)", loc="left")
 axa.legend(frameon=False, loc="lower right")
 panel_letter(axa, "a")
 
-# (b) matriz de confusao — H0, divisao temporal, limiar por custo
+# (b) matriz de confusao: H0, divisao temporal, limiar por custo
 h0 = modelos_treinados["H0_dia0"]
 pred_h0 = (h0["proba_te"] >= h0["limiar"]).astype(int)
 cm = confusion_matrix(h0["y_te"], pred_h0, labels=[0, 1])
@@ -309,7 +308,7 @@ axd.xaxis.set_major_locator(mdates.MonthLocator(interval=4))
 axd.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m"))
 for lbl in axd.get_xticklabels():
     lbl.set_rotation(35); lbl.set_ha("right")
-axd.set_xlabel("Data de entrada no Teste Inicial")
+axd.set_xlabel("Data de entrada no Teste Inicial", labelpad=30)
 axd.set_title(f"Treino até {resumo['divisao_temporal']['treino_ate']}; "
              f"teste a partir de {resumo['divisao_temporal']['teste_de']}", loc="left")
 h_falha = plt.Line2D([0], [0], marker="|", color="#C4531A", linestyle="", ms=9, label="Falhou")
@@ -326,7 +325,7 @@ textos = [(t, t.get_window_extent(r)) for t in fig.findobj(matplotlib.text.Text)
 sobrepostos = [(a.get_text()[:20], b.get_text()[:20]) for i, (a, ba) in enumerate(textos)
               for b, bb in textos[i+1:] if ba.overlaps(bb)]
 if sobrepostos:
-    print("ATENCAO — textos sobrepostos:", sobrepostos)
+    print("ATENCAO: textos sobrepostos:", sobrepostos)
 plt.close(fig)
 
 # =========================================================================

@@ -1,7 +1,7 @@
 familia_sigla,n_lotes,aprovacao_E1_pct,entraram_e3,sobrevivencia_cumulativa_pct,sobrevivencia_condicional_pct,fotoestabilidade_nao_conforme_n
-ALV,49,81.6,32,24.5,37.5,2
-AMA,50,82.0,29,26.0,44.8,1
-LMU,50,88.0,38,44.0,57.9,3
-DES,53,77.4,37,45.3,64.9,6
-DLL,44,77.3,32,56.8,78.1,1
-DLR,54,87.0,41,59.3,78.0,2
+ALV,45,66.7,25,26.7,48.0,5
+LMU,49,75.5,25,32.7,64.0,1
+AMA,45,80.0,33,33.3,45.5,4
+DES,51,84.3,35,49.0,71.4,2
+DLL,57,91.2,44,52.6,68.2,4
+DLR,53,81.1,37,54.7,78.4,2
