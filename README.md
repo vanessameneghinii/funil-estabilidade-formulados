@@ -7,6 +7,10 @@
 ![matplotlib](https://img.shields.io/badge/matplotlib-3.11-11557C)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+**Em uma frase:** no dataset sintético de 300 formulações, 42,3% sobrevivem aos 90 dias; entre as 199 que chegam ao Estágio 3, um modelo que usa só os ensaios do dia zero separa as que falham com AUC 0,82 (n = 44 lotes de teste, divisão temporal).
+
+**In short:** synthetic stability study of 300 cleaning-product formulations in a three-stage funnel (bench screening, preliminary stability, accelerated stability). 127 formulations (42.3%) survive 90 days. Among the 199 that reach stage 3, a Random Forest using only day-0 assays separates those that fail with AUC 0.82 (44 test lots, temporal split). All data are synthetic.
+
 Simulação de controle de qualidade e estudo de estabilidade de saneantes (produtos de limpeza) formulados, modelado como o funil de três estágios usado na prática de laboratório de desenvolvimento: triagem de bancada → estabilidade preliminar → estabilidade acelerada.
 
 A pergunta que o projeto responde: **é possível prever, com os ensaios do dia zero, quais formulações sobrevivem aos 90 dias de estudo de estabilidade?**
@@ -33,7 +37,7 @@ Os parâmetros e o texto descritivo livre por ensaio foram elaborados para serem
 
 ```
 data/     dados gerados (ver data/README.md para o dicionário de dados)
-src/      pipeline numerado, 01 a 05
+src/      pipeline numerado, 01 a 05 ("Passo N" neste README = script de número N)
 output/   figuras e métricas
 relatorio/ relatório técnico com a justificativa das escolhas de domínio
 ```
@@ -61,11 +65,11 @@ Das 300 formulações que entram no Teste Inicial, 241 passam o Estágio 1, 199 
 
 O fornecedor de tensoativo já separa levemente a aprovação no Teste Inicial (χ² = 7,14, p = 0,028, n = 300), e separa com muito mais força a sobrevivência aos 90 dias (χ² = 16,18, p < 0,001): FOR-B sobrevive a 32,2% contra 58,8% do FOR-C. O efeito existe desde o dia 0, mas fica bem mais forte com o tempo.
 
-Os outros dois painéis da figura respondem duas perguntas complementares. O painel b mostra que cada estágio reprova majoritariamente por um ensaio diferente: o Estágio 1 reprova por ensaio de estresse físico (estufa, agitação, centrifugação), os Estágios 2 e 3 reprovam por deriva ao longo do tempo (aspecto, odor, pH). O painel d mostra, por família, a distância entre a taxa de sobrevivência cumulativa e a condicional: o Limpador Multiuso tem a maior distância (32,7% → 64,0%), ou seja, passa relativamente bem a triagem inicial, mas quase metade das formulações que chegam ao Estágio 3 não sobrevive aos 90 dias.
+Os outros dois painéis da figura respondem duas perguntas complementares. O painel b mostra que cada estágio reprova majoritariamente por um ensaio diferente: o Estágio 1 reprova por ensaio de estresse físico (estufa, agitação, centrifugação), os Estágios 2 e 3 reprovam por deriva ao longo do tempo (aspecto, odor, pH). O painel d mostra, por família, a distância entre a taxa de sobrevivência cumulativa e a condicional: o Limpador Multiuso tem a maior distância (32,7% → 64,0%), ou seja, passa relativamente bem a triagem inicial, mas mais de um terço (36%) das formulações que chegam ao Estágio 3 não sobrevive aos 90 dias.
 
 ### Previsão antecipada
 
-Um Random Forest treinado só com os ensaios do Teste Inicial (dia 0) prevê a sobrevivência aos 90 dias com AUC 0,821, contra 0,500 de baseline de classe majoritária (n = 44 lotes de teste, divisão temporal). É um ponto único, sem intervalo de confiança (ver Limitações). O recall na classe de falha é 55,6% (10 de 18 falhas capturadas), com limiar calibrado por custo (4:1 entre deixar passar uma falha e investigar uma formulação boa à toa).
+Entre as 199 formulações que chegam ao Estágio 3 (as outras 101 já foram reprovadas antes e não entram no modelo), um Random Forest treinado só com os ensaios do Teste Inicial (dia 0) prevê a sobrevivência aos 90 dias com AUC 0,821, contra 0,500 de baseline de classe majoritária (n = 44 lotes de teste, divisão temporal). É um ponto único, sem intervalo de confiança (ver Limitações). O recall na classe de falha é 55,6% (10 de 18 falhas capturadas), com limiar calibrado por custo (4:1 entre deixar passar uma falha e investigar uma formulação boa à toa).
 
 ![Previsão antecipada: ganho por horizonte, matriz de confusão, importância e divisão temporal](output/figures/03_previsao_antecipada.png)
 
