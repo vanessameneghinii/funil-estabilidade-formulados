@@ -77,13 +77,13 @@ Esperar 30 ou 37 dias não melhora a previsão: a AUC fica entre 0,77 e 0,82 nos
 
 ### Clusterização
 
-Agrupando os 199 lotes que chegaram ao Estágio 3 pela assinatura de degradação (a inclinação de pH, amarelecimento e escurecimento em cada condição), o K-means encontra k = 2 (silhueta 0,39, confirmado por clusterização hierárquica Ward: ARI = 1,0 entre os dois métodos). O agrupamento corta as 6 famílias declaradas (ARI = 0,26 contra a família nominal): um cluster reúne Alvejante e Desinfetante, de química oxidante e mais fotossensível, e o outro reúne as quatro famílias à base de tensoativo, mais sensíveis a calor do que a luz.
+Agrupando os 199 lotes que chegaram ao Estágio 3 pela assinatura de degradação (a inclinação de pH, amarelecimento e escurecimento em cada condição), o K-means encontra k = 2 (silhueta 0,39, confirmado por clusterização hierárquica Ward: ARI = 1,0 entre os dois métodos). O agrupamento não segue as 6 famílias declaradas (ARI = 0,26 contra a família nominal), mas também não divide nenhuma: cada família cai inteira em um cluster, e os clusters juntam famílias diferentes. Um cluster reúne Alvejante e Desinfetante, mais fotossensíveis (a inclinação média do amarelecimento sob luz solar é cerca de 30% maior) e com menor deriva térmica de cor (cerca de 20% menor na estufa); o outro reúne as quatro demais famílias.
 
 ![Clusterização por assinatura de degradação](output/figures/04_clusterizacao.png)
 
 ### Qualidade do dado (Passo 2)
 
-Dos 300 lotes, a regra reconstruída a partir da `spec_master` reproduz a disposição registrada em 292 (as 8 divergências restantes vêm todas de medição fisicamente impossível). Dez lotes foram reprovados indevidamente por erro de laboratório: a sonda PH-02 leu +0,26 de pH acima do real entre setembro e novembro de 2024. O kappa quadrático entre analistas ficou entre 0,84 e 0,92.
+Dos 300 lotes, a regra reconstruída a partir da `spec_master` reproduz a disposição registrada em 292 (as 8 divergências restantes vêm todas de medição fisicamente impossível). Dez lotes foram reprovados indevidamente por erro de laboratório simulado (oito por casa decimal deslocada, um por replicata trocada e um por desvio da sonda de pH). Separadamente, a sonda PH-02 leu +0,26 de pH acima do real entre setembro e novembro de 2024: o teste mensal não sinalizou nenhum mês isolado, e a varredura em janelas de 3 meses recuperou o intervalo. O kappa quadrático entre analistas ficou entre 0,84 e 0,92.
 
 ![Viés de instrumento: pH registrado por sonda ao longo do tempo, com a janela de deriva destacada](output/figures/01_vies_instrumento.png)
 
@@ -107,7 +107,7 @@ Justificativa completa de cada item em [`relatorio/relatorio_tecnico.md`](relato
 - **Gap de otimismo entre divisão temporal e aleatória:** AUC 0,821 na temporal (a métrica que vale) contra 0,824 na aleatória em H0, mas a diferença cresce em H1 e H2 (0,80/0,77 temporal contra 0,89/0,88 aleatória). A causa mais provável é a revisão de spec de 2024-10-01, que desloca a distribuição do alvo entre treino e teste; não foi investigada formalmente.
 - **Nenhum intervalo de confiança nas métricas do Passo 4**: são estimativas pontuais em n = 44 de teste. Um bootstrap ou repetição da divisão temporal com folds deslizantes daria a incerteza; não foi feito nesta versão.
 - **Limiar de custo (4:1) é arbitrário**, escolhido para ilustrar o método; calibração contra custo real de câmara climática ou de investigação de bancada fica para uma versão futura.
-- **Clusterização usa só 12 features de inclinação** (pH, amarelecimento, escurecimento × 4 condições); densidade e aspecto/odor não entraram no vetor; um vetor mais rico poderia revelar mais que 2 clusters.
+- **Clusterização usa só 12 features de inclinação** (pH, amarelecimento, escurecimento × 4 condições); densidade e aspecto/odor não entraram no vetor; um vetor mais rico poderia revelar mais que 2 clusters. Os dois grupos também refletem coeficientes de fotossensibilidade e de deriva térmica atribuídos a cada família no gerador de dados (estimativas de engenharia, sem fonte documentada em `FONTES.md`): o resultado valida o método, que recupera uma estrutura conhecida, mas não confirma uma explicação química.
 - **O que não foi avaliado:** cartas de controle e OOT sistemático (Passo 2 já mede candidatos, mas sem carta formal), SHAP em vez de importância por permutação, modelo de shelf life por regressão linear mista, dados de matéria-prima e genealogia de lote, todos na lista de Próximos Passos abaixo.
 
 ## Próximos passos

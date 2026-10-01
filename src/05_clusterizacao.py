@@ -6,8 +6,8 @@ Pergunta de negocio (ICH Q1D, bracketing e matrixing): produtos que degradam
 DA MESMA FORMA podem compartilhar protocolo de estabilidade, independente do
 nome comercial da familia. Este script descobre esses grupos sem usar o rotulo
 de familia, e depois testa se o agrupamento encontrado coincide com a familia
-declarada ou corta por ela, o que e o resultado interessante em qualquer um
-dos dois casos.
+declarada ou junta familias diferentes, o que e o resultado interessante em
+qualquer um dos dois casos.
 
 Metodo:
   1. Para cada lote que chegou ao Estagio 3 (199), ajustar a INCLINACAO
@@ -21,9 +21,10 @@ Metodo:
      de robustez: dois metodos diferentes devem concordar em estrutura, nao
      necessariamente em rotulo.
   4. Medir concordancia com a familia DECLARADA via Adjusted Rand Index (ARI):
-     ARI alto = os grupos descobertos sao so as familias; ARI baixo = o
-     agrupamento corta as familias, que e o resultado que sustenta o
-     bracketing (dois produtos de familias diferentes que degradam igual).
+     ARI alto = os grupos descobertos sao so as familias; ARI baixo = os
+     grupos nao seguem as familias. A tabela cluster x familia mostra se eles
+     juntam familias diferentes (o resultado que sustenta o bracketing: dois
+     produtos de familias diferentes que degradam igual) ou dividem uma familia.
 
 Saidas:
   output/clusterizacao_resultado.csv   (lote, familia, cluster)
@@ -118,7 +119,7 @@ ari_metodos = adjusted_rand_score(kmeans.labels_, labels_ward)
 resumo["ari_kmeans_vs_ward"] = round(float(ari_metodos), 3)
 
 # =========================================================================
-# 4. O cluster descoberto coincide com a familia DECLARADA, ou corta por ela?
+# 4. O cluster descoberto coincide com a familia DECLARADA, ou junta familias diferentes?
 # =========================================================================
 ari_familia = adjusted_rand_score(vetores.produto_familia, kmeans.labels_)
 resumo["ari_cluster_vs_familia_declarada"] = round(float(ari_familia), 3)
@@ -200,7 +201,7 @@ cbar.set_label("z-score do centroide", fontsize=6.5)
 axc.set_title("Assinatura de cada cluster (padronizada)", loc="left")
 panel_letter(axc, "c")
 
-# (d) cluster x familia declarada: mostra se corta a familia ou nao
+# (d) cluster x familia declarada: mostra se o cluster junta familias ou divide uma
 tab_pct = tab_familia.div(tab_familia.sum(axis=1), axis=0) * 100
 esq = np.zeros(k_escolhido)
 cores_fam = plt.cm.tab10(np.linspace(0, 1, tab_familia.shape[1]))
@@ -210,9 +211,14 @@ for i, fam in enumerate(tab_familia.columns):
     esq += tab_pct[fam].to_numpy()
 axd.set_yticks(range(k_escolhido)); axd.set_yticklabels([f"Cluster {c}" for c in range(k_escolhido)])
 axd.set_xlabel("% dos lotes do cluster, por família declarada")
-axd.set_title(f"ARI cluster×família = {ari_familia:.2f} "
-             f"({'clusters ≈ famílias' if ari_familia > 0.4 else 'corta as famílias declaradas'})",
-             loc="left")
+familias_divididas = int((tab_familia.gt(0).sum(axis=0) > 1).sum())  # familias presentes em >1 cluster
+if ari_familia > 0.4:
+    txt_famil = "clusters ≈ famílias"
+elif familias_divididas == 0:
+    txt_famil = "nenhuma família é dividida"
+else:
+    txt_famil = f"{familias_divididas} família(s) dividida(s)"
+axd.set_title(f"ARI cluster×família = {ari_familia:.2f} ({txt_famil})", loc="left")
 axd.legend(frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.28), ncol=3, fontsize=6.0)
 panel_letter(axd, "d")
 

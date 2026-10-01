@@ -159,8 +159,8 @@ def panel_letter(ax, letra):
 fig, ((axa, axb), (axc, axd)) = plt.subplots(2, 2, figsize=(7.6, 6.4))
 
 # (a) atrito do funil
-etapas = ["Entram no\nTeste Inicial", "Passam o\nTeste Inicial",
-          "Passam a Estab.\nPreliminar", "Aprovados\naos 90 dias"]
+etapas = ["Entram no\nTeste Inicial", "Aprovados no\nTeste Inicial",
+          "Aprovados na\nEstab. Preliminar", "Aprovados\naos 90 dias"]
 vals = [N0, n_e1, n_e2, n_sobrev]
 cores_barra = ["#BFD3DE", "#9CBDCD", "#6FA0B8", "#2E6B8A"]
 yy = np.arange(4)[::-1]

@@ -117,8 +117,8 @@ O script tentou, nesta ordem:
 | | n | % |
 |---|---|---|
 | Entram no Teste Inicial | 300 | - |
-| Passam o Estágio 1 | 241 | 80,3% |
-| Passam a Estabilidade Preliminar | 199 | 66,3% |
+| Aprovados no Estágio 1 | 241 | 80,3% |
+| Aprovados na Estabilidade Preliminar | 199 | 66,3% |
 | Sobrevivem aos 90 dias | 127 | **42,3% cumulativo** / **63,8% condicional** |
 
 Cumulativa é sobreviventes dividido por todos que entraram (a taxa de negócio: "de cada 100 formulações que começo, quantas terminam?"). Condicional é sobreviventes dividido por quem chegou ao Estágio 3 (a taxa que importa para o modelo do Passo 4, porque ele só vê quem chegou lá, o funil já filtrou o resto antes).
@@ -214,16 +214,16 @@ Para os 199 lotes que chegaram ao Estágio 3, cada um recebe um vetor de 12 núm
 
 Silhueta média por k testado (K-means, 2 a 8): pico em **k = 2 (silhueta 0,387)**. Uma clusterização hierárquica (Ward) sobre o mesmo vetor, cortada em 2 grupos, concorda completamente com o K-means (ARI = 1,0 entre os dois métodos). Dois algoritmos com lógicas de agrupamento diferentes convergindo na mesma partição é evidência de que a estrutura encontrada é real, não um artefato de um método específico.
 
-### 6.3 O agrupamento corta as famílias declaradas
+### 6.3 O agrupamento junta famílias declaradas diferentes
 
-ARI entre o cluster descoberto e a família comercial declarada: **0,26**, moderado-baixo. Ou seja, o agrupamento não reproduz as 6 famílias comerciais.
+ARI entre o cluster descoberto e a família comercial declarada: **0,26**, moderado-baixo. O valor é baixo porque dois clusters não podem reproduzir seis rótulos, e não porque famílias sejam divididas: cada família cai inteira em um cluster (tabela abaixo). O agrupamento não reproduz as 6 famílias comerciais, mas junta famílias diferentes.
 
 | Cluster | n | Composição |
 |---|---|---|
 | 0 | 60 | Alvejante sem Cloro, Desinfetante Quaternário |
 | 1 | 139 | Amaciante, Detergente Lava-Louças, Detergente para Roupas, Limpador Multiuso |
 
-O Cluster 0 reúne as duas famílias de química oxidante/biocida (alvejante e desinfetante quaternário) e tem assinatura mais fotossensível e menos termossensível que o Cluster 1. Isso é quimicamente plausível, agentes oxidantes tendem a ser mais sensíveis a fotólise, e é o tipo de achado que justifica agrupar produtos de famílias comerciais diferentes que compartilham mecanismo de degradação para fins de bracketing/matrixing (ICH Q1D): testar menos condições, mas testar as famílias certas juntas.
+O Cluster 0 reúne o alvejante e o desinfetante quaternário e tem assinatura mais fotossensível e menos termossensível que o Cluster 1: a inclinação média do amarelecimento sob luz solar é cerca de 30% maior (0,068 contra 0,052) e cerca de 20% menor na estufa (0,020 contra 0,025). No gerador de dados, essas duas famílias recebem os maiores coeficientes de fotossensibilidade (1,55 e 1,40) e os menores de deriva térmica de cor (0,0050 e 0,0055); são estimativas de engenharia, sem fonte documentada em `FONTES.md`. A clusterização portanto recupera uma estrutura conhecida, o que valida o método, mas não confirma uma explicação química (o desinfetante quaternário é um tensoativo catiônico biocida, não um oxidante; só o alvejante sem cloro é de química oxidante). Com dados reais, seria o tipo de achado que justifica agrupar produtos de famílias comerciais diferentes que compartilham mecanismo de degradação para fins de bracketing/matrixing (ICH Q1D): testar menos condições, mas testar as famílias certas juntas.
 
 ### 6.4 Limitação
 
