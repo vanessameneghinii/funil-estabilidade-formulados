@@ -1,0 +1,275 @@
+// =====================================================================
+// medidas.dax: biblioteca de medidas do modelo de estabilidade
+// =====================================================================
+// COMO CARREGAR (Power BI Desktop > Exibicao de consulta DAX):
+//   1. Crie antes a tabela de medidas e as tabelas/colunas calculadas
+//      (ver tabelas_calculadas.dax e colunas_calculadas.dax).
+//   2. Cole este arquivo inteiro numa aba da exibicao de consulta DAX e
+//      use "Atualizar modelo com alteracoes" para gravar as medidas.
+//      Alternativa: Nova medida, uma a uma (nome = expressao).
+//   3. Defina a pasta de exibicao (Display folder) indicada em cada bloco
+//      pelo painel Propriedades da exibicao de modelo.
+//
+// CONVENCOES
+//   - Todas as medidas vivem na tabela _Medidas; nenhuma medida implicita.
+//   - Medidas de FUNIL usam COORTE: a data que filtra e a data de INICIO
+//     do lote (relacionamento inativo ativado por USERELATIONSHIP), nao a
+//     data da amostra. Medidas de MEDICAO usam a data da amostra (ativo).
+//   - Medida de CAUSA le a ponte pLoteCausa: NAO responde ao calendario.
+//     Use dLote[AnoMesInicio] como eixo de tempo ao analisar causas.
+//   - valor_impossivel = TRUE (8 linhas) e excluido de toda estatistica.
+// =====================================================================
+
+DEFINE
+
+// ---------------------------------------------------------------------
+// 01 Funil (coorte pela data de inicio do lote)
+// ---------------------------------------------------------------------
+MEASURE _Medidas[Lotes iniciados] =
+    CALCULATE (
+        DISTINCTCOUNT ( fMedicoes[lote] ),
+        USERELATIONSHIP ( fMedicoes[data_inicio_lote], dCalendario[Data] )
+    )
+
+MEASURE _Medidas[Lotes aprovados no Estágio 1] =
+    CALCULATE ( [Lotes iniciados], dLote[status_estagio1] = "Aprovado" )
+
+MEASURE _Medidas[Lotes que chegaram ao Estágio 3] =
+    CALCULATE ( [Lotes iniciados], dLote[chegou_ao_estagio3] = TRUE () )
+
+MEASURE _Medidas[Sobreviventes 90d] =
+    CALCULATE ( [Lotes iniciados], dLote[sobreviveu_90d] = TRUE () )
+
+MEASURE _Medidas[Reprovados no Teste Inicial] =
+    CALCULATE ( [Lotes iniciados], dLote[estagio_final] = "Reprovado no Teste Inicial" )
+
+MEASURE _Medidas[Reprovados na Estabilidade Preliminar] =
+    CALCULATE ( [Lotes iniciados], dLote[estagio_final] = "Reprovado na Estabilidade Preliminar" )
+
+MEASURE _Medidas[Reprovados na Estabilidade Acelerada] =
+    CALCULATE ( [Lotes iniciados], dLote[estagio_final] = "Reprovado na Estabilidade Acelerada" )
+
+// Duas perguntas diferentes, nunca misturadas (mesma distincao do README):
+//   cumulativa  = sobreviventes / TODOS que entraram
+//   condicional = sobreviventes / os que CHEGARAM ao Estagio 3
+MEASURE _Medidas[Taxa cumulativa 90d] =
+    DIVIDE ( [Sobreviventes 90d], [Lotes iniciados] )
+
+MEASURE _Medidas[Taxa condicional 90d] =
+    DIVIDE ( [Sobreviventes 90d], [Lotes que chegaram ao Estágio 3] )
+
+// Seletor: um segmentador sobre dSeletorTaxa[Definicao] alterna a definicao
+// em todos os visuais que usam esta medida (padrao: cumulativa).
+MEASURE _Medidas[Taxa de sobrevivência (seletor)] =
+    VAR definicao = SELECTEDVALUE ( dSeletorTaxa[Definicao], "Cumulativa" )
+    RETURN
+        IF ( definicao = "Condicional", [Taxa condicional 90d], [Taxa cumulativa 90d] )
+
+// ALLEXCEPT: remove todos os filtros de dLote, menos a familia.
+// Em matriz (linha = familia, coluna = fornecedor) da a fatia de cada
+// fornecedor dentro da propria familia.
+MEASURE _Medidas[Participação do fornecedor na família] =
+    DIVIDE (
+        [Lotes iniciados],
+        CALCULATE ( [Lotes iniciados], ALLEXCEPT ( dLote, dLote[produto_familia] ) )
+    )
+
+// RANKX dinamico: reordena conforme os filtros selecionados (ALLSELECTED).
+// ISINSCOPE evita um ranking sem sentido na linha de total.
+MEASURE _Medidas[Ranking do fornecedor (taxa cumulativa)] =
+    IF (
+        ISINSCOPE ( dLote[fornecedor_tensoativo] ),
+        RANKX (
+            ALLSELECTED ( dLote[fornecedor_tensoativo] ),
+            [Taxa cumulativa 90d],
+            ,
+            DESC,
+            DENSE
+        )
+    )
+
+// ---------------------------------------------------------------------
+// 02 Causas de reprovação (ponte muitos-para-muitos pLoteCausa)
+// ---------------------------------------------------------------------
+// Um lote pode ter varias causas: contar LINHAS da ponte superconta lotes;
+// DISTINCTCOUNT do lote na ponte conta cada lote uma vez por causa filtrada.
+MEASURE _Medidas[Lotes por causa] =
+    DISTINCTCOUNT ( pLoteCausa[lote] )
+
+MEASURE _Medidas[Causas registradas] =
+    COUNTROWS ( pLoteCausa )
+
+MEASURE _Medidas[Causas por lote reprovado (média)] =
+    DIVIDE ( [Causas registradas], [Lotes por causa] )
+
+// Nao soma 100%: um lote com 2 causas aparece nas duas. E esperado.
+MEASURE _Medidas[% dos lotes reprovados com a causa] =
+    DIVIDE (
+        [Lotes por causa],
+        CALCULATE ( [Lotes por causa], ALL ( dCausa ) )
+    )
+
+// ---------------------------------------------------------------------
+// 03 Qualidade das medições (nivel de MEDICAO, nao de lote)
+// ---------------------------------------------------------------------
+MEASURE _Medidas[Medições realizadas] =
+    COUNTROWS ( fMedicoes )
+
+MEASURE _Medidas[Medições julgáveis] =
+    CALCULATE ( COUNTROWS ( fMedicoes ), fMedicoes[julgavel] = TRUE () )
+
+MEASURE _Medidas[Medições OOS] =
+    CALCULATE ( COUNTROWS ( fMedicoes ), fMedicoes[oos] = TRUE () )
+
+MEASURE _Medidas[% OOS] =
+    DIVIDE ( [Medições OOS], [Medições julgáveis] )
+
+MEASURE _Medidas[Medições inválidas (fisicamente impossíveis)] =
+    CALCULATE ( COUNTROWS ( fMedicoes ), fMedicoes[valor_impossivel] = TRUE () )
+
+// Usa a coluna calculada dLote[Medicoes OOS do lote] (transicao de contexto).
+// Contraste com [Reprovados...]: ter um OOS numa medicao NAO reprova o lote.
+MEASURE _Medidas[Lotes com algum OOS] =
+    CALCULATE ( COUNTROWS ( dLote ), dLote[Medicoes OOS do lote] > 0 )
+
+// ---------------------------------------------------------------------
+// 04 Estatística (funcoes estatisticas basicas)
+// ---------------------------------------------------------------------
+MEASURE _Medidas[pH médio] =
+    CALCULATE (
+        AVERAGE ( fMedicoes[valor] ),
+        dEnsaio[ensaio] = "ph",
+        fMedicoes[valor_impossivel] = FALSE ()
+    )
+
+MEASURE _Medidas[pH mediana] =
+    CALCULATE (
+        MEDIAN ( fMedicoes[valor] ),
+        dEnsaio[ensaio] = "ph",
+        fMedicoes[valor_impossivel] = FALSE ()
+    )
+
+MEASURE _Medidas[pH desvio-padrão] =
+    CALCULATE (
+        STDEV.S ( fMedicoes[valor] ),
+        dEnsaio[ensaio] = "ph",
+        fMedicoes[valor_impossivel] = FALSE ()
+    )
+
+MEASURE _Medidas[pH percentil 95] =
+    CALCULATE (
+        PERCENTILE.INC ( fMedicoes[valor], 0.95 ),
+        dEnsaio[ensaio] = "ph",
+        fMedicoes[valor_impossivel] = FALSE ()
+    )
+
+// pH de familias diferentes tem alvos diferentes (3,2 a 10,2): media e
+// desvio-padrao sem filtro de familia misturam escalas. O desvio contra o
+// ALVO da familia (RELATED em dLote) e a metrica comparavel.
+MEASURE _Medidas[Desvio médio do pH vs alvo] =
+    VAR linhasPH =
+        CALCULATETABLE (
+            fMedicoes,
+            dEnsaio[ensaio] = "ph",
+            fMedicoes[valor_impossivel] = FALSE ()
+        )
+    RETURN
+        AVERAGEX ( linhasPH, fMedicoes[valor] - RELATED ( dLote[ph_alvo] ) )
+
+MEASURE _Medidas[ΔE médio de estabilidade] =
+    CALCULATE ( AVERAGE ( fMedicoes[valor] ), dEnsaio[ensaio] = "delta_e_estabilidade" )
+
+// ---------------------------------------------------------------------
+// 05 Câmara climática (semiaditivas)
+// ---------------------------------------------------------------------
+// fOcupacaoCamara tem 1 linha por lote x condicao x DIA ocupado:
+//   dias-camara     = contagem de linhas (aditiva em qualquer dimensao)
+//   camaras ocupadas = FOTO de um dia (nao se soma ao longo do tempo)
+MEASURE _Medidas[Dias-câmara] =
+    COUNTROWS ( fOcupacaoCamara )
+
+MEASURE _Medidas[Dias-câmara desperdiçados] =
+    CALCULATE ( [Dias-câmara], dLote[sobreviveu_90d] = FALSE () )
+
+MEASURE _Medidas[% dias-câmara desperdiçados] =
+    DIVIDE ( [Dias-câmara desperdiçados], [Dias-câmara] )
+
+// PREMISSA ILUSTRATIVA (nao ha custo real no dataset): valor do dia-camara
+// escolhido no segmentador de dParametroCusto; 50 e o padrao.
+MEASURE _Medidas[Valor por dia-câmara (premissa)] =
+    SELECTEDVALUE ( dParametroCusto[R$ por dia-camara], 50 )
+
+MEASURE _Medidas[Custo desperdiçado (R$, premissa)] =
+    [Dias-câmara desperdiçados] * [Valor por dia-câmara (premissa)]
+
+// Semiaditiva: no periodo, usa o ULTIMO dia com dado (nao a soma dos dias).
+MEASURE _Medidas[Câmaras ocupadas (último dia com dado)] =
+    CALCULATE (
+        COUNTROWS ( fOcupacaoCamara ),
+        LASTNONBLANK ( dCalendario[Data], CALCULATE ( COUNTROWS ( fOcupacaoCamara ) ) )
+    )
+
+MEASURE _Medidas[Pico de ocupação] =
+    MAXX ( VALUES ( dCalendario[Data] ), CALCULATE ( COUNTROWS ( fOcupacaoCamara ) ) )
+
+MEASURE _Medidas[Ocupação média (dias com câmara ativa)] =
+    DIVIDE ( [Dias-câmara], DISTINCTCOUNT ( fOcupacaoCamara[data] ) )
+
+// ---------------------------------------------------------------------
+// 06 Inteligência de tempo (dCalendario marcada como tabela de datas)
+// ---------------------------------------------------------------------
+MEASURE _Medidas[Medições (ano anterior)] =
+    CALCULATE ( [Medições realizadas], SAMEPERIODLASTYEAR ( dCalendario[Data] ) )
+
+MEASURE _Medidas[Medições acumuladas no ano] =
+    TOTALYTD ( [Medições realizadas], dCalendario[Data] )
+
+MEASURE _Medidas[Variação de medições vs ano anterior] =
+    VAR atual = [Medições realizadas]
+    VAR anterior = [Medições (ano anterior)]
+    RETURN
+        IF ( NOT ISBLANK ( anterior ), DIVIDE ( atual - anterior, anterior ) )
+
+MEASURE _Medidas[Lotes iniciados (ano anterior)] =
+    CALCULATE ( [Lotes iniciados], SAMEPERIODLASTYEAR ( dCalendario[Data] ) )
+
+// Janela de 3 meses terminando no ultimo mes do contexto. Nos 2 primeiros
+// meses da serie a janela e incompleta e a media fica subestimada.
+MEASURE _Medidas[Lotes iniciados (média móvel 3M)] =
+    VAR meses = 3
+    RETURN
+        DIVIDE (
+            CALCULATE (
+                [Lotes iniciados],
+                DATESINPERIOD ( dCalendario[Data], MAX ( dCalendario[Data] ), -meses, MONTH )
+            ),
+            meses
+        )
+
+// Papel duplo da data: a mesma tabela de medicoes vista pela data de INICIO
+// do lote (relacionamento inativo) em vez da data da amostra (ativo).
+MEASURE _Medidas[Medições por data de início do lote] =
+    CALCULATE (
+        [Medições realizadas],
+        USERELATIONSHIP ( fMedicoes[data_inicio_lote], dCalendario[Data] )
+    )
+
+// ---------------------------------------------------------------------
+// 07 Formatação condicional (Cor da fonte > Valor do campo)
+// ---------------------------------------------------------------------
+// Paleta Okabe-Ito (segura para daltonismo): azul / laranja / vermelhao.
+// Limites 1,5% e 2,5% escolhidos porque o % OOS varia de ~1,0% a ~2,3% por
+// familia e de ~1,1% a ~3,3% por estagio: o semaforo discrimina.
+MEASURE _Medidas[Cor do semáforo (% OOS)] =
+    VAR p = [% OOS]
+    RETURN
+        SWITCH (
+            TRUE (),
+            ISBLANK ( p ), BLANK (),
+            p >= 0.025, "#D55E00",
+            p >= 0.015, "#E69F00",
+            "#0072B2"
+        )
+
+EVALUATE
+    ROW ( "Medidas definidas", 1 )

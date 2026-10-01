@@ -38,3 +38,7 @@ Todos os arquivos desta pasta são gerados por `src/01_gerar_dataset.py` (seed 4
 | `familias_produto.csv` | `agitacao_magnetica_aplicavel` | booleano | Falso para o desinfetante (produto límpido) |
 | `familias_produto.csv` | `excecao_centrifugacao` | texto | Regra de aceitação por exceção, quando existe |
 | `familias_produto.csv` | `fonte_faixa_ph` | texto | [LIT] literatura/regulação ou [EST] estimativa; detalhe em FONTES.md |
+
+## `dados_longo.csv`: data da amostra
+
+Gerado pelo `src/02_preparar_dados.py`. `data_amostra` é derivada: no Estágio 1 é `data_inicio_teste`; no Estágio 2 é `data_inicio_teste + tempo_dias`; no Estágio 3 é `data_inicio_teste + 30 + tempo_dias`, porque o funil é sequencial e o Estágio 3 só começa depois do portão de 30 dias do Estágio 2. (Antes desta revisão, o Estágio 3 usava `data_inicio_teste + tempo_dias`, e as janelas dos dois estágios coincidiam. A mudança altera apenas essa coluna, nas linhas do Estágio 3; nenhum julgamento contra a spec muda, pois o único ensaio com spec versionada, `delta_e_liberacao`, é do Estágio 1.)

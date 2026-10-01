@@ -162,7 +162,7 @@ ks = sorted(silhuetas)
 axa.plot(ks, [silhuetas[k] for k in ks], marker="o", color="#2E6B8A", lw=1.6)
 axa.scatter([k_escolhido], [silhuetas[k_escolhido]], color="#C4531A", s=60, zorder=3)
 axa.annotate(f"k={k_escolhido} escolhido", (k_escolhido, silhuetas[k_escolhido]),
-            xytext=(8, -14), textcoords="offset points", fontsize=6.8, color="#C4531A")
+            xytext=(9, 9), textcoords="offset points", fontsize=6.8, color="#C4531A")
 axa.set_ylim(0, max(silhuetas.values()) * 1.3)  # folga no topo: evita que o tick mais alto encoste na letra do painel
 axa.set_xlabel("Número de clusters (k)"); axa.set_ylabel("Silhueta média")
 axa.set_title("k escolhido pelo pico da silhueta", loc="left")

@@ -1,0 +1,91 @@
+// =====================================================================
+// validacao.dax: reproduz no modelo os valores de referencia
+// =====================================================================
+// Rode CADA bloco EVALUATE na exibicao de consulta DAX (um por vez) e
+// compare com powerbi/valores_de_referencia.csv e powerbi/referencia_mensal.csv.
+// Os valores esperados foram calculados em pandas, independentemente do DAX.
+// Divergencia = erro no modelo (relacionamento, tipo de dado ou medida).
+
+// ---- Bloco 1: totais gerais -----------------------------------------
+EVALUATE
+ROW (
+    "Lotes iniciados (300)", [Lotes iniciados],
+    "Aprovados Estagio 1 (241)", [Lotes aprovados no Estágio 1],
+    "Chegaram ao Estagio 3 (199)", [Lotes que chegaram ao Estágio 3],
+    "Sobreviventes 90d (127)", [Sobreviventes 90d],
+    "Taxa cumulativa (0,4233)", [Taxa cumulativa 90d],
+    "Taxa condicional (0,6382)", [Taxa condicional 90d],
+    "Medicoes (29421)", [Medições realizadas],
+    "Julgaveis (24651)", [Medições julgáveis],
+    "OOS (355)", [Medições OOS],
+    "% OOS (0,0144)", [% OOS],
+    "Invalidas (8)", [Medições inválidas (fisicamente impossíveis)],
+    "Lotes com algum OOS (179)", [Lotes com algum OOS],
+    "Dias-camara (78870)", [Dias-câmara],
+    "Desperdicio (29340)", [Dias-câmara desperdiçados],
+    "% desperdicio (0,3720)", [% dias-câmara desperdiçados],
+    "Custo R$ premissa 50 (1467000)", [Custo desperdiçado (R$, premissa)],
+    "Pico de ocupacao (199)", [Pico de ocupação],
+    "Desvio medio pH vs alvo (-0.0892)", [Desvio médio do pH vs alvo]
+)
+
+// ---- Bloco 2: por fornecedor (FOR-A 116 / 36,2% ; FOR-B 87 / 32,2% ; FOR-C 97 / 58,8%)
+EVALUATE
+SUMMARIZECOLUMNS (
+    dLote[fornecedor_tensoativo],
+    "Lotes", [Lotes iniciados],
+    "Taxa cumulativa", [Taxa cumulativa 90d],
+    "Ranking", [Ranking do fornecedor (taxa cumulativa)]
+)
+ORDER BY dLote[fornecedor_tensoativo]
+
+// ---- Bloco 3: por familia (comparar com valores_de_referencia.csv) ---
+EVALUATE
+SUMMARIZECOLUMNS (
+    dLote[produto_familia],
+    "Taxa cumulativa", [Taxa cumulativa 90d],
+    "Taxa condicional", [Taxa condicional 90d],
+    "% OOS", [% OOS],
+    "pH medio", [pH médio],
+    "pH desvio-padrao", [pH desvio-padrão]
+)
+ORDER BY dLote[produto_familia]
+// pH medio e desvio-padrao esperados por familia (pH global mistura escalas):
+//   Alvejante Liquido sem Cloro            pH medio 4.0436 ; desvio-padrao 0.2259
+//   Amaciante de Roupas (esterquat)        pH medio 3.0732 ; desvio-padrao 0.2681
+//   Desinfetante Quaternario Concentrado   pH medio 6.9487 ; desvio-padrao 0.2120
+//   Detergente Liquido Lava-Loucas         pH medio 7.5298 ; desvio-padrao 0.2427
+//   Detergente Liquido para Roupas         pH medio 9.5121 ; desvio-padrao 0.2467
+//   Limpador Multiuso Alcalino             pH medio 10.1386 ; desvio-padrao 0.2995
+
+// ---- Bloco 4: desvio do pH por instrumento
+//      (N/D -0,0985 ; PH-01 +0,0175 ; PH-02 +0,0869)
+EVALUATE
+SUMMARIZECOLUMNS (
+    dInstrumento[instrumento_ph],
+    "Desvio medio pH vs alvo", [Desvio médio do pH vs alvo]
+)
+ORDER BY dInstrumento[instrumento_ph]
+
+// ---- Bloco 5: serie mensal (comparar com referencia_mensal.csv) ------
+// Confere: papel duplo da data (coorte x amostra), semiaditiva e pico.
+EVALUATE
+SUMMARIZECOLUMNS (
+    dCalendario[AnoMes],
+    "Lotes iniciados (coorte)", [Lotes iniciados],
+    "Medicoes (data da amostra)", [Medições realizadas],
+    "Dias-camara", [Dias-câmara],
+    "Ocupacao ultimo dia", [Câmaras ocupadas (último dia com dado)],
+    "Pico", [Pico de ocupação]
+)
+ORDER BY dCalendario[AnoMes]
+
+// ---- Bloco 6: causas (ponte M:N). Soma das linhas > 173 de proposito
+//      (212 causas registradas em 173 lotes reprovados).
+EVALUATE
+SUMMARIZECOLUMNS (
+    dCausa[causa],
+    "Lotes", [Lotes por causa],
+    "% dos reprovados", [% dos lotes reprovados com a causa]
+)
+ORDER BY [Lotes] DESC

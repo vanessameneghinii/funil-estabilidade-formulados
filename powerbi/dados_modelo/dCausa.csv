@@ -1,0 +1,9 @@
+causa,grupo_causa,ordem
+falha em estufa 50C,Estresse fisico,1
+falha em centrifugacao,Estresse fisico,2
+falha em agitacao magnetica,Estresse fisico,3
+pH fora de faixa,Fisico-quimico,4
+densidade fora de faixa,Fisico-quimico,5
+aspecto nao conforme,Visual e sensorial,6
+cor fora de tolerancia,Visual e sensorial,7
+odor alterado,Visual e sensorial,8

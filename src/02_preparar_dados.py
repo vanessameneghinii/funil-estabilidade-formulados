@@ -209,8 +209,13 @@ spec["vigente_ate"] = spec.vigente_ate.fillna(pd.Timestamp("2099-12-31"))
 # spec se aplica.
 data_lote = e1.set_index("lote").data_inicio_teste
 e1["data_amostra"] = e1.data_inicio_teste
-for df in (e2, e3):
-    df["data_amostra"] = df.lote.map(data_lote) + pd.to_timedelta(df.tempo_dias, unit="D")
+# O funil e sequencial: o Estagio 3 so comeca depois do portao do Estagio 2
+# (ultima leitura do E2 = 30 dias). Somar so `tempo_dias` colocava as janelas
+# dos dois estagios no mesmo dia. O deslocamento nao altera nenhum julgamento:
+# o unico ensaio cuja spec muda de versao (delta_e_liberacao) e do Estagio 1.
+dias_portao_e2 = int(e2.tempo_dias.max())
+e2["data_amostra"] = e2.lote.map(data_lote) + pd.to_timedelta(e2.tempo_dias, unit="D")
+e3["data_amostra"] = e3.lote.map(data_lote) + pd.to_timedelta(dias_portao_e2 + e3.tempo_dias, unit="D")
 
 # =========================================================================
 # 3. Formato longo unificado

@@ -226,7 +226,7 @@ axd.set_yticks(yf); axd.set_yticklabels(familias_ord)
 axd.set_xlabel("% sobrevivência aos 90 dias"); axd.set_xlim(0, 128)
 axd.set_xticks([0, 20, 40, 60, 80, 100])
 axd.set_title("A distância entre as duas é o custo dos 2 primeiros critérios de decisão", loc="left")
-axd.legend(frameon=False, loc="center right", bbox_to_anchor=(1.02, 0.5), fontsize=6.3)
+axd.legend(frameon=False, loc="upper left", bbox_to_anchor=(0.0, -0.2), fontsize=6.3)
 panel_letter(axd, "d")
 
 fig.tight_layout(pad=0.7)

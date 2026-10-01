@@ -1,0 +1,7 @@
+condicao,estagio,estagio_nome,ordem,exposicao_luz,ocupa_camara
+Teste Inicial,1,1. Teste Inicial,1,false,false
+Choque Termico 5C/40C,2,2. Estabilidade Preliminar,2,false,true
+Ambiente Escuro 25C,3,3. Estabilidade Acelerada,3,false,true
+Estufa 40C,3,3. Estabilidade Acelerada,4,false,true
+Geladeira 5C,3,3. Estabilidade Acelerada,5,false,true
+Luz Solar,3,3. Estabilidade Acelerada,6,true,true

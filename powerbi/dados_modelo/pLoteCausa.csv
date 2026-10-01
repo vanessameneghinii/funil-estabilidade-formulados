@@ -1,0 +1,213 @@
+lote,estagio,causa
+DLL-2401-004,1,falha em centrifugacao
+DLL-2401-004,1,falha em agitacao magnetica
+LMU-2401-008,1,aspecto nao conforme
+DLR-2402-024,1,falha em centrifugacao
+DLR-2402-024,1,falha em agitacao magnetica
+LMU-2402-029,1,densidade fora de faixa
+ALV-2403-038,1,falha em estufa 50C
+DLL-2403-039,1,falha em centrifugacao
+DLL-2403-039,1,falha em agitacao magnetica
+ALV-2403-040,1,falha em estufa 50C
+LMU-2403-041,1,falha em estufa 50C
+ALV-2404-052,1,densidade fora de faixa
+ALV-2404-052,1,odor alterado
+DES-2404-054,1,densidade fora de faixa
+LMU-2405-062,1,odor alterado
+AMA-2405-064,1,odor alterado
+ALV-2406-080,1,falha em estufa 50C
+LMU-2406-081,1,falha em centrifugacao
+LMU-2406-081,1,falha em agitacao magnetica
+ALV-2406-084,1,pH fora de faixa
+DES-2407-091,1,aspecto nao conforme
+DES-2407-091,1,falha em estufa 50C
+DES-2407-095,1,falha em centrifugacao
+ALV-2407-096,1,aspecto nao conforme
+ALV-2407-096,1,falha em estufa 50C
+ALV-2407-096,1,falha em agitacao magnetica
+AMA-2408-109,1,aspecto nao conforme
+AMA-2408-109,1,falha em estufa 50C
+AMA-2408-109,1,falha em centrifugacao
+AMA-2408-111,1,falha em estufa 50C
+DLL-2408-118,1,densidade fora de faixa
+DLR-2408-119,1,falha em estufa 50C
+ALV-2408-121,1,densidade fora de faixa
+LMU-2409-129,1,aspecto nao conforme
+LMU-2409-129,1,falha em estufa 50C
+LMU-2409-132,1,aspecto nao conforme
+LMU-2409-132,1,falha em estufa 50C
+DLR-2409-139,1,densidade fora de faixa
+AMA-2409-143,1,odor alterado
+LMU-2410-152,1,aspecto nao conforme
+LMU-2410-152,1,falha em estufa 50C
+LMU-2410-156,1,pH fora de faixa
+DLR-2411-171,1,cor fora de tolerancia
+DES-2411-172,1,odor alterado
+DLR-2411-182,1,falha em estufa 50C
+LMU-2412-187,1,falha em estufa 50C
+ALV-2412-188,1,odor alterado
+LMU-2412-189,1,aspecto nao conforme
+LMU-2412-189,1,falha em estufa 50C
+DLR-2412-194,1,falha em estufa 50C
+AMA-2412-196,1,pH fora de faixa
+DES-2412-197,1,densidade fora de faixa
+DLR-2412-198,1,falha em centrifugacao
+DLR-2412-198,1,falha em agitacao magnetica
+AMA-2412-200,1,falha em centrifugacao
+AMA-2412-200,1,falha em agitacao magnetica
+AMA-2501-204,1,cor fora de tolerancia
+ALV-2501-206,1,cor fora de tolerancia
+DES-2501-209,1,pH fora de faixa
+ALV-2501-210,1,odor alterado
+ALV-2501-219,1,falha em agitacao magnetica
+LMU-2501-221,1,pH fora de faixa
+DES-2502-230,1,densidade fora de faixa
+ALV-2502-237,1,cor fora de tolerancia
+DLR-2503-253,1,aspecto nao conforme
+DLR-2503-253,1,falha em estufa 50C
+ALV-2503-257,1,cor fora de tolerancia
+DLR-2504-263,1,falha em centrifugacao
+DLR-2504-263,1,falha em agitacao magnetica
+DES-2504-266,1,falha em estufa 50C
+ALV-2504-271,1,aspecto nao conforme
+ALV-2504-271,1,falha em estufa 50C
+ALV-2504-271,1,falha em agitacao magnetica
+AMA-2505-282,1,cor fora de tolerancia
+ALV-2505-288,1,aspecto nao conforme
+ALV-2505-288,1,falha em estufa 50C
+ALV-2505-288,1,falha em centrifugacao
+ALV-2505-288,1,falha em agitacao magnetica
+AMA-2506-291,1,densidade fora de faixa
+AMA-2506-291,1,cor fora de tolerancia
+DLR-2506-292,1,falha em estufa 50C
+DLL-2506-293,1,falha em centrifugacao
+DLL-2506-293,1,falha em agitacao magnetica
+DLL-2506-299,1,falha em estufa 50C
+LMU-2401-006,2,odor alterado
+DLR-2402-011,2,aspecto nao conforme
+AMA-2402-015,2,aspecto nao conforme
+DLR-2402-018,2,aspecto nao conforme
+ALV-2403-030,2,aspecto nao conforme
+ALV-2403-031,2,aspecto nao conforme
+LMU-2403-033,2,aspecto nao conforme
+ALV-2403-037,2,odor alterado
+DLL-2403-042,2,aspecto nao conforme
+DES-2404-046,2,aspecto nao conforme
+LMU-2404-053,2,aspecto nao conforme
+ALV-2404-058,2,odor alterado
+LMU-2404-059,2,aspecto nao conforme
+LMU-2405-071,2,aspecto nao conforme
+LMU-2406-082,2,aspecto nao conforme
+DLL-2407-098,2,aspecto nao conforme
+DLR-2407-101,2,aspecto nao conforme
+DES-2408-114,2,aspecto nao conforme
+DES-2408-122,2,aspecto nao conforme
+DLL-2409-135,2,aspecto nao conforme
+DES-2409-140,2,odor alterado
+AMA-2409-145,2,aspecto nao conforme
+DLR-2410-158,2,odor alterado
+DLL-2410-163,2,aspecto nao conforme
+DLL-2410-164,2,aspecto nao conforme
+ALV-2411-174,2,odor alterado
+DES-2411-180,2,aspecto nao conforme
+DES-2412-193,2,odor alterado
+DES-2412-199,2,aspecto nao conforme
+LMU-2412-201,2,aspecto nao conforme
+LMU-2412-201,2,odor alterado
+DES-2501-208,2,aspecto nao conforme
+LMU-2501-214,2,densidade fora de faixa
+DLL-2501-215,2,aspecto nao conforme
+LMU-2501-222,2,aspecto nao conforme
+DLL-2503-240,2,aspecto nao conforme
+DLR-2503-247,2,aspecto nao conforme
+AMA-2504-272,2,odor alterado
+LMU-2505-279,2,densidade fora de faixa
+DLR-2505-281,2,aspecto nao conforme
+LMU-2506-290,2,aspecto nao conforme
+LMU-2506-295,2,aspecto nao conforme
+DLL-2506-296,2,aspecto nao conforme
+AMA-2402-012,3,densidade fora de faixa
+DES-2402-013,3,aspecto nao conforme
+DES-2402-013,3,odor alterado
+LMU-2402-022,3,aspecto nao conforme
+DLL-2402-025,3,aspecto nao conforme
+LMU-2402-028,3,pH fora de faixa
+DES-2403-032,3,aspecto nao conforme
+AMA-2403-043,3,pH fora de faixa
+DLL-2403-044,3,aspecto nao conforme
+LMU-2404-048,3,odor alterado
+LMU-2404-048,3,pH fora de faixa
+DLL-2404-055,3,densidade fora de faixa
+LMU-2404-057,3,odor alterado
+LMU-2404-057,3,pH fora de faixa
+DLR-2405-065,3,aspecto nao conforme
+AMA-2405-068,3,pH fora de faixa
+AMA-2405-069,3,odor alterado
+DES-2405-070,3,aspecto nao conforme
+ALV-2406-074,3,odor alterado
+ALV-2406-074,3,pH fora de faixa
+ALV-2406-079,3,pH fora de faixa
+DLL-2406-085,3,aspecto nao conforme
+DLR-2407-102,3,aspecto nao conforme
+AMA-2407-105,3,pH fora de faixa
+AMA-2407-106,3,pH fora de faixa
+ALV-2408-108,3,pH fora de faixa
+ALV-2408-113,3,odor alterado
+LMU-2408-116,3,pH fora de faixa
+DES-2408-117,3,aspecto nao conforme
+DLL-2409-125,3,aspecto nao conforme
+AMA-2409-126,3,aspecto nao conforme
+LMU-2409-127,3,odor alterado
+AMA-2409-136,3,aspecto nao conforme
+AMA-2409-136,3,odor alterado
+AMA-2409-136,3,pH fora de faixa
+DLL-2409-138,3,aspecto nao conforme
+ALV-2409-141,3,pH fora de faixa
+AMA-2409-146,3,aspecto nao conforme
+AMA-2409-151,3,aspecto nao conforme
+DLL-2410-154,3,densidade fora de faixa
+DLL-2410-160,3,pH fora de faixa
+DLR-2410-162,3,aspecto nao conforme
+DES-2410-165,3,aspecto nao conforme
+DES-2410-165,3,odor alterado
+DLL-2411-170,3,densidade fora de faixa
+ALV-2411-176,3,pH fora de faixa
+LMU-2411-177,3,aspecto nao conforme
+DLR-2411-179,3,densidade fora de faixa
+DLR-2411-181,3,densidade fora de faixa
+ALV-2411-183,3,pH fora de faixa
+AMA-2411-184,3,densidade fora de faixa
+ALV-2412-190,3,densidade fora de faixa
+AMA-2412-191,3,odor alterado
+DLL-2412-195,3,aspecto nao conforme
+DLL-2412-195,3,densidade fora de faixa
+DES-2501-207,3,odor alterado
+DLL-2501-213,3,aspecto nao conforme
+DLL-2501-213,3,densidade fora de faixa
+LMU-2501-216,3,pH fora de faixa
+DLR-2502-228,3,densidade fora de faixa
+AMA-2502-229,3,pH fora de faixa
+DLL-2502-231,3,aspecto nao conforme
+ALV-2502-236,3,densidade fora de faixa
+AMA-2502-238,3,pH fora de faixa
+ALV-2503-243,3,aspecto nao conforme
+ALV-2503-243,3,odor alterado
+ALV-2503-243,3,pH fora de faixa
+DES-2503-245,3,densidade fora de faixa
+AMA-2503-246,3,pH fora de faixa
+DES-2503-250,3,aspecto nao conforme
+DLL-2503-255,3,odor alterado
+DES-2503-256,3,odor alterado
+AMA-2503-260,3,pH fora de faixa
+DLR-2503-262,3,aspecto nao conforme
+ALV-2504-267,3,aspecto nao conforme
+ALV-2504-267,3,pH fora de faixa
+AMA-2504-268,3,aspecto nao conforme
+LMU-2504-269,3,pH fora de faixa
+ALV-2504-270,3,aspecto nao conforme
+ALV-2504-270,3,pH fora de faixa
+DLR-2504-273,3,odor alterado
+AMA-2505-275,3,pH fora de faixa
+ALV-2505-277,3,pH fora de faixa
+DES-2505-280,3,aspecto nao conforme
+DLL-2505-283,3,aspecto nao conforme

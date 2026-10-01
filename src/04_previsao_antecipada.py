@@ -308,7 +308,7 @@ axd.xaxis.set_major_locator(mdates.MonthLocator(interval=4))
 axd.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m"))
 for lbl in axd.get_xticklabels():
     lbl.set_rotation(35); lbl.set_ha("right")
-axd.set_xlabel("Data de entrada no Teste Inicial", labelpad=30)
+axd.set_xlabel("Data de entrada no Teste Inicial", labelpad=6)
 axd.set_title(f"Treino até {resumo['divisao_temporal']['treino_ate']}; "
              f"teste a partir de {resumo['divisao_temporal']['teste_de']}", loc="left")
 h_falha = plt.Line2D([0], [0], marker="|", color="#C4531A", linestyle="", ms=9, label="Falhou")
