@@ -82,8 +82,8 @@ Reaplicando a `spec_master` do zero sobre as medições do Estágio 1, a disposi
 
 O offset da sonda PH-02 é detectado comparando os dois instrumentos por período de tempo, sobre o resíduo em relação ao alvo de pH da família (o resíduo remove o efeito da família, que é maior que o offset procurado).
 
-- **Teste mensal** (Mann-Whitney, com correção de Bonferroni para os meses testados): não sinaliza nenhum mês isoladamente. Com cerca de 8 lotes por instrumento por mês, falta potência estatística para detectar o offset real de +0,26 nessa granularidade.
-- **Varredura em janela de 3 meses**: recupera o intervalo **setembro a novembro de 2024**, com offset estimado de **+0,26**, próximo do valor real.
+- **Teste mensal** (Mann-Whitney, com correção de Bonferroni para os meses testados): não sinaliza nenhum mês isoladamente. Com cerca de 8 lotes por instrumento por mês, falta potência estatística para detectar o offset real de +0,35 nessa granularidade.
+- **Varredura em janela de 3 meses**: recupera o intervalo **setembro a novembro de 2024**, com offset estimado de **+0,26**, que subestima o valor injetado (+0,35).
 
 Os dois testes são reportados juntos porque respondem perguntas diferentes: o mensal tem mais especificidade (localizaria com precisão de mês, se tivesse potência suficiente para isso), o trimestral tem mais sensibilidade (localiza com precisão de trimestre, mas de fato encontra o efeito). Reportar só um dos dois esconderia essa diferença de resolução, por isso os dois aparecem juntos, com a ressalva.
 

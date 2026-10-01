@@ -83,7 +83,7 @@ Agrupando os 199 lotes que chegaram ao Estágio 3 pela assinatura de degradaçã
 
 ### Qualidade do dado (Passo 2)
 
-Dos 300 lotes, a regra reconstruída a partir da `spec_master` reproduz a disposição registrada em 292 (as 8 divergências restantes vêm todas de medição fisicamente impossível). Dez lotes foram reprovados indevidamente por erro de laboratório simulado (oito por casa decimal deslocada, um por replicata trocada e um por desvio da sonda de pH). Separadamente, a sonda PH-02 leu +0,26 de pH acima do real entre setembro e novembro de 2024: o teste mensal não sinalizou nenhum mês isolado, e a varredura em janelas de 3 meses recuperou o intervalo. O kappa quadrático entre analistas ficou entre 0,84 e 0,92.
+Dos 300 lotes, a regra reconstruída a partir da `spec_master` reproduz a disposição registrada em 292 (as 8 divergências restantes vêm todas de medição fisicamente impossível). Dez lotes foram reprovados indevidamente por erro de laboratório simulado (oito por casa decimal deslocada, um por replicata trocada e um por desvio da sonda de pH). Separadamente, a sonda PH-02 foi simulada com offset de +0,35 de pH entre 1º de setembro e 15 de novembro de 2024: o teste mensal não sinalizou nenhum mês isolado, e a varredura em janelas de 3 meses recuperou o intervalo (setembro a novembro) com offset estimado de +0,26, abaixo do valor injetado. O kappa quadrático entre analistas ficou entre 0,84 e 0,92.
 
 ![Viés de instrumento: pH registrado por sonda ao longo do tempo, com a janela de deriva destacada](output/figures/01_vies_instrumento.png)
 
