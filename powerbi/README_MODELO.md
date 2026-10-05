@@ -63,11 +63,11 @@ Todos são 1 → * (dimensão para fato), filtro em uma direção só.
 
 ## Decisões de modelagem
 
-**1. Papel duplo da data, e por que ele não passa por `dLote`.** O plano inicial dizia "data de fabricação × data de análise". O dataset não tem data de fabricação; tem `data_inicio_teste` (início do estudo do lote) e `data_amostra` (dia de cada medição). O papel duplo usa esse par. `data_inicio_lote` é replicada como chave estrangeira em `fMedicoes` porque ligar o calendário também a `dLote` criaria dois caminhos de filtro até `fMedicoes` (ambiguidade), e o Power BI desativaria um deles sem aviso.
+**1. Papel duplo da data, e por que ele não passa por `dLote`.** O dataset não tem data de fabricação; tem `data_inicio_teste` (início do estudo do lote) e `data_amostra` (dia de cada medição). O papel duplo usa esse par. `data_inicio_lote` é replicada como chave estrangeira em `fMedicoes` porque ligar o calendário também a `dLote` criaria dois caminhos de filtro até `fMedicoes` (ambiguidade), e o Power BI desativaria um deles sem aviso.
 
-**2. Ponte M:N entre lote e causa, sem filtro bidirecional.** O plano inicial citava uma ponte lote↔ensaio. Os dados pedem lote↔causa: 32 dos 173 lotes reprovados têm mais de uma causa gravada em texto com `;`, algumas repetidas ("aspecto nao conforme; aspecto nao conforme; odor alterado"). A ponte normaliza (com deduplicação) em 212 linhas. `dLote` e `dCausa` são o lado "1" e a ponte é o lado "*" de ambos, então nenhum precisa de filtro bidirecional: as medidas contam a partir da ponte (`DISTINCTCOUNT(pLoteCausa[lote])`). Consequência aceita: a soma de "lotes por causa" passa de 173, porque um lote com duas causas aparece nas duas.
+**2. Ponte M:N entre lote e causa, sem filtro bidirecional.** Os dados pedem uma ponte entre lote e causa: 32 dos 173 lotes reprovados têm mais de uma causa gravada em texto com `;`, algumas repetidas ("aspecto nao conforme; aspecto nao conforme; odor alterado"). A ponte normaliza (com deduplicação) em 212 linhas. `dLote` e `dCausa` são o lado "1" e a ponte é o lado "*" de ambos, então nenhum precisa de filtro bidirecional: as medidas contam a partir da ponte (`DISTINCTCOUNT(pLoteCausa[lote])`). Consequência aceita: a soma de "lotes por causa" passa de 173, porque um lote com duas causas aparece nas duas.
 
-**3. Duas taxas de sobrevivência, nunca misturadas.** A taxa cumulativa (127/300 = 42,3%) e a condicional (127/199 = 63,8%) respondem perguntas diferentes, como já distingue o README do projeto. A medida `Taxa de sobrevivência (seletor)` e a tabela desconectada `dSeletorTaxa` alternam entre elas e foram validadas (teste 2), mas **as páginas finais mostram as duas taxas lado a lado e a tabela fica oculta**. Motivo: a ordem de FOR-A e FOR-B se inverte entre as definições (cumulativa 36,2% × 32,2%; condicional 55,3% × 59,6%), e um segmentador esconderia isso de quem não clica. Além disso, a taxa condicional usa poucos lotes por fornecedor (76, 47 e 76 que chegaram ao Estágio 3), então a ordem entre FOR-A e FOR-B nessa definição não deve ser lida como conclusão.
+**3. Duas taxas de sobrevivência, nunca misturadas.** A taxa cumulativa (127/300 = 42,3%) e a condicional (127/199 = 63,8%) respondem perguntas diferentes, como já distingue o README do projeto. A medida `Taxa de sobrevivência (seletor)` e a tabela desconectada `dSeletorTaxa` alternam entre elas e foram validadas, mas **as páginas finais mostram as duas taxas lado a lado e a tabela fica oculta**. Motivo: a ordem de FOR-A e FOR-B se inverte entre as definições (cumulativa 36,2% × 32,2%; condicional 55,3% × 59,6%), e um segmentador esconderia isso de quem não clica. Além disso, a taxa condicional usa poucos lotes por fornecedor (76, 47 e 76 que chegaram ao Estágio 3), então a ordem entre FOR-A e FOR-B nessa definição não deve ser lida como conclusão.
 
 **4. OOS de medição não é reprovação de lote.** 179 lotes têm pelo menos uma medição fora de especificação, mas só 173 foram reprovados. As duas medidas coexistem e o contraste entre elas é intencional.
 
@@ -79,7 +79,8 @@ Todos são 1 → * (dimensão para fato), filtro em uma direção só.
 
 ## Achados sobre o dataset e decisões tomadas
 
-1. **Estágios 2 e 3 sobrepostos: corrigido na origem.** Em `02_preparar_dados.py`, a data da amostra do estágio 3 era `data_inicio + tempo_dias`, o que colocava a janela do estágio 3 no mesmo dia da janela do estágio 2 (defasagem 0 nos 1.037 grupos), embora o funil seja sequencial. Passou a ser `data_inicio + 30 dias (portão do estágio 2) + tempo_dias`. A correção foi validada antes de ser aplicada: rodei o pipeline 02 a 05 numa cópia isolada sem alteração (idêntica ao repositório, byte a byte, inclusive os PNGs) e numa cópia corrigida. **O único arquivo que difere é `data/dados_longo.csv`**, e nele só mudou `data_amostra` das 23.880 linhas do estágio 3 (+30 dias). Nenhum julgamento, nenhuma taxa e nenhuma figura de `output/` mudou, porque o único ensaio cuja spec muda de versão (`delta_e_liberacao`, v1.0 → v1.1 em 2024-10-01) pertence ao estágio 1. Efeito no modelo: o total de dias-câmara e o desperdício não mudam; o **pico de ocupação caiu de 208 para 199 câmaras (em 2025-05-15)**, o que mostra que o pico anterior era um artefato da sobreposição, e a série passou a terminar em outubro de 2025. O exportador `06` agora falha se os estágios voltarem a se sobrepor.
+1. **Datas dos estágios 2 e 3.** Em `02_preparar_dados.py`, a data da amostra do estágio 3 é `data_inicio + 30 dias (portão do estágio 2) + tempo_dias`, de modo que as janelas dos estágios 2 e 3 não se sobrepõem, como exige o funil sequencial. O exportador `06` falha se os estágios voltarem a se sobrepor. No modelo, o pico de ocupação é de 199 câmaras (em 2025-05-15) e a série termina em outubro de 2025.
+
 2. **Lotes reprovados no estágio 3 permanecem 90 dias na câmara** (288 combinações lote × condição, todas com `tempo_dias` máximo de 90), porque o critério só é julgado ao final. Também cumpriram os 30 dias do estágio 2. Por isso cada um consumiu 30 + 360 = 390 dias-câmara, não 360. É uma propriedade do desenho do estudo e permanece.
 3. **Custo: a métrica principal é dias-câmara, não reais.** O dataset não contém custo. O número-âncora do relatório é **37,2% dos dias-câmara desperdiçados**, que vem dos dados. O valor em reais (R$ 1.467.000 com R$ 50 por dia-câmara) aparece só como análise de sensibilidade, pelo parâmetro `dParametroCusto`, e sempre rotulado como premissa ilustrativa.
 4. **pH só é interpretável dentro de uma família.** Os alvos vão de 3,2 (amaciante) a 10,2 (limpador alcalino), então a média e o desvio-padrão globais (6,97 e 2,49) misturam escalas. A validação usa o desvio contra o alvo da família (`Desvio médio do pH vs alvo`, -0.0892 no total) e a média e o desvio-padrão **por família** (desvio-padrão entre 0,21 e 0,30). As medidas globais continuam disponíveis, mas nenhum visual deve exibi-las sem filtro de família.
@@ -152,9 +153,7 @@ Executados em 2026-10-02, Power BI Desktop 2.158.1177.0.
 
 ## Tópicos da PL-300
 
-Conferido contra a lista de tópicos que o projeto se propôs a exercitar. "Coberto" significa que existe no modelo ou no relatório; o que não foi feito está listado abaixo.
-
-**Coberto**
+Tópicos do exame Microsoft PL-300 (Power BI Data Analyst) exercitados neste modelo e relatório:
 
 | Domínio | Tópico | Onde |
 |---|---|---|
@@ -177,17 +176,7 @@ Conferido contra a lista de tópicos que o projeto se propôs a exercitar. "Cobe
 | Visualizar | Formatação condicional por *Valor do campo* | `Cor do semáforo (% OOS)` |
 | Visualizar | Tema acessível, texto alternativo, ordem de tabulação | três páginas do relatório |
 
-**Cobertura parcial**
-
-| Tópico | O que foi feito e o que faltou |
-|---|---|
-| Mesclar para esquema estrela | O esquema estrela existe, mas a desnormalização de família e fornecedor em `dLote` foi feita em pandas (`06_exportar_modelo_bi.py`), não com *Mesclar consultas* no Power Query |
-| `FILTER`, `DISTINCT` | Não usados; o modelo usa `CALCULATE` com filtros diretos e `DISTINCTCOUNT` |
-| Medidas implícitas × explícitas | Todo o relatório usa medidas explícitas; a regra de *Resumir por* foi aplicada a `dCondicao[estagio]`, mas não há um exemplo comparativo |
-
-**Não coberto**
-
-Unpivot, pivot, transposição e agrupamento no Power Query (os dados já estão em formato longo); medidas rápidas; hierarquias e pastas de exibição; grupos de cálculo (há um guia escrito em `DAX/grupo_de_calculo_visao_temporal.md`, mas não foi implementado); dica de ferramenta personalizada; drillthrough e indicadores; visuais em Python ou R.
+Fora do escopo desta versão: grupos de cálculo (há um guia escrito em `DAX/grupo_de_calculo_visao_temporal.md`), dica de ferramenta personalizada, drillthrough e visuais em Python ou R.
 
 ## Como abrir o `.pbix`
 

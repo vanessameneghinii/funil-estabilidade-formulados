@@ -3,7 +3,7 @@
 // =====================================================================
 // COMO CARREGAR (Power BI Desktop > Exibicao de consulta DAX):
 //   1. Crie antes a tabela de medidas e as tabelas/colunas calculadas
-//      (ver tabelas_calculadas.dax e colunas_calculadas.dax).
+//      (ver tabelas_e_colunas_calculadas.dax).
 //   2. Cole este arquivo inteiro numa aba da exibicao de consulta DAX e
 //      use "Atualizar modelo com alteracoes" para gravar as medidas.
 //      Alternativa: Nova medida, uma a uma (nome = expressao).
@@ -60,7 +60,7 @@ MEASURE _Medidas[Taxa condicional 90d] =
 
 // Seletor: um segmentador sobre dSeletorTaxa[Definicao] alterna a definicao
 // em todos os visuais que usam esta medida (padrao: cumulativa).
-// Validada (teste 2), mas as paginas finais mostram as duas taxas lado a lado
+// Validada no modelo, mas as paginas finais mostram as duas taxas lado a lado
 // (a ordem FOR-A x FOR-B inverte entre as definicoes); dSeletorTaxa fica oculta.
 MEASURE _Medidas[Taxa de sobrevivência (seletor)] =
     VAR definicao = SELECTEDVALUE ( dSeletorTaxa[Definicao], "Cumulativa" )
