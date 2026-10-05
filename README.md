@@ -15,7 +15,7 @@ Simulação de controle de qualidade e estudo de estabilidade de saneantes (prod
 
 A pergunta que o projeto responde: **é possível prever, com os ensaios do dia zero, quais formulações sobrevivem aos 90 dias de estudo de estabilidade?**
 
-> **Status:** completo: dataset, validação, funil, previsão antecipada e clusterização de assinaturas de degradação.
+> **Status:** completo: dataset, validação, funil, previsão antecipada, clusterização de assinaturas de degradação, e modelo semântico com relatório de três páginas em Power BI (pasta `powerbi/`).
 
 📄 **Leitura rápida aqui no README** | 📊 **[Relatório técnico completo](relatorio/relatorio_tecnico.md)**: metodologia, justificativa de cada decisão de domínio e todos os números por trás de cada figura
 
@@ -36,10 +36,11 @@ Os parâmetros e o texto descritivo livre por ensaio foram elaborados para serem
 ## Estrutura
 
 ```
-data/     dados gerados (ver data/README.md para o dicionário de dados)
-src/      pipeline numerado, 01 a 05 ("Passo N" neste README = script de número N)
-output/   figuras e métricas
+data/      dados gerados (ver data/README.md para o dicionário de dados)
+src/       pipeline numerado, 01 a 05 ("Passo N" neste README = script de número N); 06 exporta as tabelas do modelo Power BI
+output/    figuras e métricas
 relatorio/ relatório técnico com a justificativa das escolhas de domínio
+powerbi/   modelo semântico em estrela, medidas DAX, scripts M, validação e relatório de 3 páginas (ver powerbi/README_MODELO.md)
 ```
 
 ## Como rodar
@@ -51,6 +52,7 @@ python src/02_preparar_dados.py                    # valida schema, julga vs. sp
 python src/03_analise_funil.py                      # atrito, causas, efeito de fornecedor
 python src/04_previsao_antecipada.py                 # previsão antecipada, 3 horizontes
 python src/05_clusterizacao.py                       # agrupamento por assinatura de degradação
+python src/06_exportar_modelo_bi.py                  # regera powerbi/dados_modelo e os valores de referência do Power BI
 ```
 
 Todo o pipeline é determinístico (seed 42): rodar do zero reproduz `data/` e `output/` por inteiro, byte a byte nas colunas numéricas.
@@ -87,6 +89,18 @@ Dos 300 lotes, a regra reconstruída a partir da `spec_master` reproduz a dispos
 
 ![Viés de instrumento: pH registrado por sonda ao longo do tempo, com a janela de deriva destacada](output/figures/01_vies_instrumento.png)
 
+### Modelo e relatório em Power BI
+
+O mesmo dataset foi modelado em estrela no Power BI para responder: **quanto do tempo de câmara climática é consumido por formulações que acabam reprovadas, e onde (família, fornecedor, causa) esse desperdício se concentra?** No dataset sintético, 37,2% dos dias-câmara (29.340 de 78.870) foram ocupados por lotes que não sobreviveram aos 90 dias.
+
+- 10 tabelas (2 fatos, 1 ponte muitos-para-muitos e 7 dimensões, incluindo o calendário gerado em M), mais 3 tabelas auxiliares (medidas, seletor e parâmetro de custo); 43 medidas DAX e um relacionamento inativo para o papel duplo da data.
+- As medidas foram validadas no Power BI Desktop contra valores calculados de forma independente em pandas (`powerbi/valores_de_referencia.csv`, `powerbi/referencia_mensal.csv` e `powerbi/referencia_inteligencia_tempo.csv`).
+- O custo em reais é uma premissa ilustrativa (parâmetro what-if); o número principal é a fração de dias-câmara.
+
+![Página 2 do relatório](powerbi/imagens/pagina2_camara_e_custo.png)
+
+Detalhes, decisões de modelagem e o registro dos testes: [powerbi/README_MODELO.md](powerbi/README_MODELO.md).
+
 ## Decisões técnicas
 
 Justificativa completa de cada item em [`relatorio/relatorio_tecnico.md`](relatorio/relatorio_tecnico.md).
@@ -108,6 +122,7 @@ Justificativa completa de cada item em [`relatorio/relatorio_tecnico.md`](relato
 - **Nenhum intervalo de confiança nas métricas do Passo 4**: são estimativas pontuais em n = 44 de teste. Um bootstrap ou repetição da divisão temporal com folds deslizantes daria a incerteza; não foi feito nesta versão.
 - **Limiar de custo (4:1) é arbitrário**, escolhido para ilustrar o método; calibração contra custo real de câmara climática ou de investigação de bancada fica para uma versão futura.
 - **Clusterização usa só 12 features de inclinação** (pH, amarelecimento, escurecimento × 4 condições); densidade e aspecto/odor não entraram no vetor; um vetor mais rico poderia revelar mais que 2 clusters. Os dois grupos também refletem coeficientes de fotossensibilidade e de deriva térmica atribuídos a cada família no gerador de dados (estimativas de engenharia, sem fonte documentada em `FONTES.md`): o resultado valida o método, que recupera uma estrutura conhecida, mas não confirma uma explicação química.
+- **O relatório de Power BI usa o mesmo dado sintético:** o custo em reais depende de uma premissa que não vem do dataset, e o deslocamento do PH-02 e a vantagem do FOR-C foram embutidos no gerador.
 - **O que não foi avaliado:** cartas de controle e OOT sistemático (Passo 2 já mede candidatos, mas sem carta formal), SHAP em vez de importância por permutação, modelo de shelf life por regressão linear mista, dados de matéria-prima e genealogia de lote, todos na lista de Próximos Passos abaixo.
 
 ## Próximos passos
