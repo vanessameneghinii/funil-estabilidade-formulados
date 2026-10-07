@@ -47,7 +47,7 @@ O modelo foi escrito sem acesso ao Power BI Desktop e depois executado nele. A g
 
 ### Relacionamentos
 
-Todos são 1 → * (dimensão para fato), filtro em uma direção só.
+São 12 relacionamentos (a tabela abaixo agrupa os que partem da mesma coluna), todos 1 → * (dimensão para fato), com filtro em uma direção só.
 
 | De (1) | Para (*) | Estado |
 |---|---|---|
